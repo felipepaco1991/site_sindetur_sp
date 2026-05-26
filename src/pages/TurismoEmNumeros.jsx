@@ -49,7 +49,7 @@ export default function TurismoEmNumeros() {
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
                 O Turismo em Números é uma plataforma de dados e análises sobre o setor turístico brasileiro. Com informações atualizadas periodicamente, é uma ferramenta essencial para gestores e empresários do turismo.
               </p>
-              <a href="https://turismosemnumeros.com.br" target="_blank" rel="noopener noreferrer">
+              <a href="https://turismoemnumeros.com.br" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 rounded-lg group">
                   Acessar Turismo em Números
                   <ExternalLink className="w-4 h-4 ml-2" />
