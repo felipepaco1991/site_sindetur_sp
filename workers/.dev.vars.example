@@ -1,0 +1,4 @@
+BREVO_API_KEY=coloque_aqui_sua_chave_api_da_brevo
+BREVO_SENDER_EMAIL=no-reply@sindetursp.org.br
+BREVO_SENDER_NAME=Sindetur-SP
+ALLOWED_ORIGINS=http://localhost:5173,https://sindetursp.org.br

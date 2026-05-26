@@ -1,0 +1,7 @@
+name = "sindetursp-forms"
+main = "forms-worker.js"
+compatibility_date = "2026-05-22"
+
+[vars]
+BREVO_SENDER_NAME = "Sindetur-SP"
+ALLOWED_ORIGINS = "http://localhost:5173,https://sindetursp.org.br"
