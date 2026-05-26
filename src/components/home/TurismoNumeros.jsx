@@ -27,7 +27,7 @@ export default function TurismoNumeros() {
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Acompanhe dados, análises e informações relevantes para o mercado de turismo. Agora em formato digital.
               </p>
-              <a href="https://turismosemnumeros.com.br" target="_blank" rel="noopener noreferrer">
+              <a href="https://turismoemnumeros.com.br" target="_blank" rel="noopener noreferrer">
                 <Button className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground group w-fit">
                   Acessar Turismo em Números
                   <ExternalLink className="w-4 h-4 ml-2" />

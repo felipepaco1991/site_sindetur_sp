@@ -1,5 +1,25 @@
 export const circulares = [
   {
+    ano: "2026",
+    items: [
+      {
+        numero: "Circular 01/2026",
+        titulo: "Lembrete vencto Contribuição Patronal 2026",
+        url: "https://sindetursp.org.br/wp-content/uploads/2026/05/0012026%20-%20Lembrete%20vencto%20Contribui%C3%A7%C3%A3o%20Patronal%202026.pdf",
+      },
+      {
+        numero: "Circular 02/2026",
+        titulo: "Lembrete vencto Contribuição Sindical Patronal 2026",
+        url: "https://sindetursp.org.br/wp-content/uploads/2026/05/0022026%20-%20Lembrete%20vencto%20Contribui%C3%A7%C3%A3o%20Sindical%20Patronal%202026.pdf",
+      },
+      {
+        numero: "Circular 03/2026",
+        titulo: "Contribuição Associativa 2026",
+        url: "https://sindetursp.org.br/wp-content/uploads/2026/05/0032026%20-%20Contribui%C3%A7%C3%A3o%20Associativa%202026.pdf",
+      },
+    ],
+  },
+  {
     ano: "2025",
     items: [
       {

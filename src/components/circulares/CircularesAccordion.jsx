@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { circulares } from "@/data/circulares";
 
 export default function CircularesAccordion() {
-  const [openAno, setOpenAno] = useState("2025");
+  const [openAno, setOpenAno] = useState(circulares[0]?.ano ?? null);
 
   return (
     <div className="max-w-3xl mx-auto space-y-3">
