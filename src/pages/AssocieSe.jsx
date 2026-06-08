@@ -10,17 +10,17 @@ import { submitAssociationForm } from "@/lib/forms-api";
 import { toast } from "sonner";
 
 const docs = [
-  "Ficha proposta de associacao preenchida e assinada digitalmente ou fisicamente",
-  "Copia do contrato social consolidado ou da ultima alteracao contratual registrada",
-  "Copia do Registro no Ministerio do Turismo",
-  "Copia do CNPJ - Cadastro Nacional da Pessoa Juridica",
+  "Ficha proposta de associação preenchida e assinada digitalmente ou fisicamente",
+  "Cópia do contrato social consolidado ou da última alteração contratual registrada",
+  "Cópia do Registro no Ministério do Turismo",
+  "Cópia do CNPJ - Cadastro Nacional da Pessoa Jurídica",
 ];
 
 const segmentos = [
-  "Agencia de Viagens",
+  "Agência de Viagens",
   "Operadora de Turismo",
-  "Transportadora Turistica",
-  "Centro de Convencoes",
+  "Transportadora Turística",
+  "Centro de Convenções",
   "Consultoria em Turismo",
   "Outro",
 ];
@@ -55,7 +55,7 @@ export default function AssocieSe() {
       await submitAssociationForm(form, files);
       setSent(true);
       setFiles([]);
-      toast.success("Solicitacao enviada com sucesso.");
+      toast.success("Solicitação enviada com sucesso.");
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -70,9 +70,9 @@ export default function AssocieSe() {
           <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10 text-green-600" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground font-display">Solicitacao enviada!</h1>
+          <h1 className="text-3xl font-bold text-foreground font-display">Solicitação enviada!</h1>
           <p className="mt-4 text-muted-foreground text-lg">
-            Recebemos sua solicitacao de associacao. Nossa equipe fara o retorno pelo e-mail informado.
+            Recebemos sua solicitação de associação. Nossa equipe fará o retorno pelo e-mail informado.
           </p>
         </div>
       </section>
@@ -93,10 +93,10 @@ export default function AssocieSe() {
               Associe-se
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold mt-3 font-display leading-tight">
-              Faca parte do Sindetur-SP
+              Faça parte do Sindetur-SP
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed">
-              Podem se associar empresas de turismo constituidas como sociedades, simples ou empresarias, publicas ou privadas, desde que exercam atividades relacionadas ao setor turistico.
+              Podem se associar empresas de turismo constituídas como sociedades, simples ou empresárias, públicas ou privadas, desde que exerçam atividades relacionadas ao setor turístico.
             </p>
           </motion.div>
         </div>
@@ -104,7 +104,7 @@ export default function AssocieSe() {
 
       <section className="py-16 bg-secondary/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-bold text-foreground mb-6">Documentos necessarios:</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">Documentos necessários:</h2>
           <div className="space-y-3">
             {docs.map((doc, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-border/50">
@@ -124,7 +124,7 @@ export default function AssocieSe() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground font-display mb-8">
-              Enviar solicitacao de associacao
+              Enviar solicitação de associação
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -136,7 +136,7 @@ export default function AssocieSe() {
                     required
                     value={form.empresa}
                     onChange={(e) => handleChange("empresa", e.target.value)}
-                    placeholder="Razao social"
+                    placeholder="Razão social"
                   />
                 </div>
                 <div className="space-y-2">
@@ -150,7 +150,7 @@ export default function AssocieSe() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="responsavel">Nome do responsavel *</Label>
+                  <Label htmlFor="responsavel">Nome do responsável *</Label>
                   <Input
                     id="responsavel"
                     required
@@ -181,7 +181,7 @@ export default function AssocieSe() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>Segmento de atuacao *</Label>
+                  <Label>Segmento de atuação *</Label>
                   <Select value={form.segmento} onValueChange={(v) => handleChange("segmento", v)} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
@@ -201,7 +201,7 @@ export default function AssocieSe() {
                   id="mensagem"
                   value={form.mensagem}
                   onChange={(e) => handleChange("mensagem", e.target.value)}
-                  placeholder="Informacoes adicionais (opcional)"
+                  placeholder="Informações adicionais (opcional)"
                   rows={4}
                 />
               </div>
@@ -260,7 +260,7 @@ export default function AssocieSe() {
                 ) : (
                   <Send className="w-5 h-5 mr-2" />
                 )}
-                {sending ? "Enviando..." : "Enviar solicitacao de associacao"}
+                {sending ? "Enviando..." : "Enviar solicitação de associação"}
               </Button>
             </form>
           </motion.div>

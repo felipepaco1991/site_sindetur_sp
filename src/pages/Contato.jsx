@@ -40,8 +40,8 @@ export default function Contato() {
   const contactInfo = [
     { icon: Phone, label: "Telefone", value: "(11) 3350-8080", href: "tel:+551133508080" },
     { icon: Mail, label: "E-mail", value: "saa@sindetursp.org.br", href: "mailto:saa@sindetursp.org.br" },
-    { icon: MapPin, label: "Endereco", value: "Av. Vieira de Carvalho, 115 - 11º andar - Centro Historico de Sao Paulo, SP, 01210-010" },
-    { icon: Clock, label: "Horario", value: "Segunda a sexta, das 9h as 18h" },
+    { icon: MapPin, label: "Endereço", value: "Av. Vieira de Carvalho, 115 - 11º andar - Centro Histórico de São Paulo, SP, 01210-010" },
+    { icon: Clock, label: "Horário", value: "Segunda a sexta, das 9h às 18h" },
   ];
 
   return (
@@ -61,7 +61,7 @@ export default function Contato() {
               Fale com o Sindetur-SP
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed">
-              Entre em contato conosco para duvidas, informacoes ou suporte.
+              Entre em contato conosco para dúvidas, informações ou suporte.
             </p>
           </motion.div>
         </div>
@@ -72,7 +72,7 @@ export default function Contato() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-bold text-foreground font-display mb-8">
-                Informacoes de contato
+                Informações de contato
               </h2>
               <div className="space-y-6">
                 {contactInfo.map((item, i) => (
@@ -127,12 +127,12 @@ export default function Contato() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="assunto">Assunto *</Label>
-                        <Input id="assunto" required value={form.assunto} onChange={(e) => handleChange("assunto", e.target.value)} placeholder="Ex: Duvida sobre associacao" />
+                        <Input id="assunto" required value={form.assunto} onChange={(e) => handleChange("assunto", e.target.value)} placeholder="Ex: Dúvida sobre associação" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="mensagem">Mensagem *</Label>
-                      <Textarea id="mensagem" required value={form.mensagem} onChange={(e) => handleChange("mensagem", e.target.value)} placeholder="Descreva sua duvida ou solicitacao" rows={5} />
+                      <Textarea id="mensagem" required value={form.mensagem} onChange={(e) => handleChange("mensagem", e.target.value)} placeholder="Descreva sua dúvida ou solicitação" rows={5} />
                     </div>
                     <input
                       type="text"
@@ -164,7 +164,7 @@ export default function Contato() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localizacao Sindetur-SP"
+          title="Localização Sindetur-SP"
         />
       </section>
     </>
