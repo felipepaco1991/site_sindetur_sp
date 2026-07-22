@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Instagram, Linkedin, FileSearch } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { label: "Início", path: "/" },
   { label: "Sobre", path: "/sobre" },
   { label: "Convênios", path: "/beneficios" },
   { label: "CCT'S", path: "/cct" },
-  { label: "Circulares", path: "/circulares" },
+  {
+    label: "Circulares",
+    children: [
+      { label: "Circulares", path: "/circulares", icon: FileText },
+      { label: "Guia NR-01", path: "/guia-nr01", icon: BookOpen },
+    ],
+  },
   { label: "Turismo em Números", path: "/turismo-em-numeros" },
   { label: "Contato", path: "/contato" },
 ];
@@ -17,6 +29,7 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileCircularesOpen, setMobileCircularesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,6 +40,7 @@ export default function Header() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setMobileCircularesOpen(false);
   }, [location]);
 
   return (
@@ -50,19 +64,58 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  location.pathname === link.path
-                    ? "text-primary bg-primary/5"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.children
+                ? link.children.some((child) => location.pathname === child.path)
+                : location.pathname === link.path;
+
+              if (link.children) {
+                return (
+                  <DropdownMenu key={link.label}>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        type="button"
+                        className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                          isActive
+                            ? "bg-primary/5 text-primary"
+                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        }`}
+                      >
+                        {link.label}
+                        <ChevronDown className="h-3.5 w-3.5" />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-52 p-1.5">
+                      {link.children.map((child) => {
+                        const Icon = child.icon;
+                        return (
+                          <DropdownMenuItem key={child.path} asChild className="cursor-pointer px-3 py-2.5">
+                            <Link to={child.path} className={location.pathname === child.path ? "text-primary" : ""}>
+                              <Icon className="h-4 w-4" />
+                              {child.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        );
+                      })}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    isActive
+                      ? "text-primary bg-primary/5"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Actions */}
@@ -120,19 +173,71 @@ export default function Header() {
             className="lg:hidden bg-white border-t border-border overflow-hidden"
           >
             <nav className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? "text-primary bg-primary/5"
-                      : "text-muted-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = link.children
+                  ? link.children.some((child) => location.pathname === child.path)
+                  : location.pathname === link.path;
+
+                if (link.children) {
+                  return (
+                    <div key={link.label}>
+                      <button
+                        type="button"
+                        onClick={() => setMobileCircularesOpen((open) => !open)}
+                        className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+                          isActive ? "bg-primary/5 text-primary" : "text-muted-foreground hover:bg-muted"
+                        }`}
+                        aria-expanded={mobileCircularesOpen}
+                      >
+                        {link.label}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${mobileCircularesOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {mobileCircularesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="overflow-hidden pl-4"
+                          >
+                            {link.children.map((child) => {
+                              const Icon = child.icon;
+                              return (
+                                <Link
+                                  key={child.path}
+                                  to={child.path}
+                                  className={`flex items-center gap-2 rounded-lg px-4 py-3 text-sm transition-colors ${
+                                    location.pathname === child.path
+                                      ? "text-primary"
+                                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                  }`}
+                                >
+                                  <Icon className="h-4 w-4" />
+                                  {child.label}
+                                </Link>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      isActive
+                        ? "text-primary bg-primary/5"
+                        : "text-muted-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <div className="pt-3 border-t border-border mt-3 space-y-2">
                 <a href="https://sindetursp.gersin.com.br/public/login" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2">
