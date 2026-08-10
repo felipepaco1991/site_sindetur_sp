@@ -15,6 +15,7 @@ import GuiaNR01 from './pages/GuiaNR01';
 import TurismoEmNumeros from './pages/TurismoEmNumeros';
 import AssocieSe from './pages/AssocieSe';
 import Contato from './pages/Contato';
+import Radix from './pages/Radix';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -47,6 +48,7 @@ const AuthenticatedApp = () => {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/beneficios" element={<BeneficiosConvenios />} />
         <Route path="/convenios" element={<BeneficiosConvenios />} />
+        <Route path="/radix" element={<Radix />} />
         <Route path="/cct" element={<CCT />} />
         <Route path="/circulares" element={<Circulares />} />
         <Route path="/guia-nr01" element={<GuiaNR01 />} />

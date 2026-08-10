@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen, Handshake, GraduationCap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   DropdownMenu,
@@ -13,7 +13,13 @@ import {
 const navLinks = [
   { label: "Início", path: "/" },
   { label: "Sobre", path: "/sobre" },
-  { label: "Convênios", path: "/beneficios" },
+  {
+    label: "Convênios",
+    children: [
+      { label: "Convênios", path: "/beneficios", icon: Handshake },
+      { label: "Radix", path: "/radix", icon: GraduationCap },
+    ],
+  },
   { label: "CCT'S", path: "/cct" },
   {
     label: "Circulares",
@@ -29,7 +35,7 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileCircularesOpen, setMobileCircularesOpen] = useState(false);
+  const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -40,7 +46,7 @@ export default function Header() {
 
   useEffect(() => {
     setMobileOpen(false);
-    setMobileCircularesOpen(false);
+    setMobileExpandedMenu(null);
   }, [location]);
 
   return (
@@ -183,17 +189,17 @@ export default function Header() {
                     <div key={link.label}>
                       <button
                         type="button"
-                        onClick={() => setMobileCircularesOpen((open) => !open)}
+                        onClick={() => setMobileExpandedMenu((openMenu) => openMenu === link.label ? null : link.label)}
                         className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                           isActive ? "bg-primary/5 text-primary" : "text-muted-foreground hover:bg-muted"
                         }`}
-                        aria-expanded={mobileCircularesOpen}
+                        aria-expanded={mobileExpandedMenu === link.label}
                       >
                         {link.label}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${mobileCircularesOpen ? "rotate-180" : ""}`} />
+                        <ChevronDown className={`h-4 w-4 transition-transform ${mobileExpandedMenu === link.label ? "rotate-180" : ""}`} />
                       </button>
                       <AnimatePresence initial={false}>
-                        {mobileCircularesOpen && (
+                        {mobileExpandedMenu === link.label && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
