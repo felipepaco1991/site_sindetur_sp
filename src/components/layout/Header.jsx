@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen, Handshake, GraduationCap } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen, Handshake, GraduationCap, Landmark } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   DropdownMenu,
@@ -26,6 +26,7 @@ const navLinks = [
     children: [
       { label: "Circulares", path: "/circulares", icon: FileText },
       { label: "Guia NR-01", path: "/guia-nr01", icon: BookOpen },
+      { label: "Reforma Tributária", path: "/reforma-tributaria", icon: Landmark },
     ],
   },
   { label: "Turismo em Números", path: "/turismo-em-numeros" },

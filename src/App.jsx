@@ -12,6 +12,7 @@ import BeneficiosConvenios from './pages/BeneficiosConvenios';
 import CCT from './pages/CCT';
 import Circulares from './pages/Circulares';
 import GuiaNR01 from './pages/GuiaNR01';
+import ReformaTributaria from './pages/ReformaTributaria';
 import TurismoEmNumeros from './pages/TurismoEmNumeros';
 import AssocieSe from './pages/AssocieSe';
 import Contato from './pages/Contato';
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
         <Route path="/cct" element={<CCT />} />
         <Route path="/circulares" element={<Circulares />} />
         <Route path="/guia-nr01" element={<GuiaNR01 />} />
+        <Route path="/reforma-tributaria" element={<ReformaTributaria />} />
         <Route path="/turismo-em-numeros" element={<TurismoEmNumeros />} />
         <Route path="/associe-se" element={<AssocieSe />} />
         <Route path="/contato" element={<Contato />} />

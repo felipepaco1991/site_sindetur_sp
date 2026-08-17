@@ -8,6 +8,7 @@ const partners = [
   { name: "Qualicorp", logo: "https://media.base44.com/images/public/user_692dcbff3f71294a0de415ce/80a614373_Captura-de-tela-de-2023-06-02-18-21-44-e1685741735519-150x150.webp" },
   { name: "Sesc Senac", logo: "https://media.base44.com/images/public/user_692dcbff3f71294a0de415ce/f8f28a950_Untitled-1-150x150.webp" },
   { name: "Mackenzie", logo: "https://media.base44.com/images/public/user_692dcbff3f71294a0de415ce/3b226d791_Mackenzie-150x150.webp" },
+  { name: "Radix", logo: "/assets/radix.jpg" },
 ];
 
 export default function PartnersSection() {

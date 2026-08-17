@@ -6,11 +6,15 @@ import {
   ArrowRight,
   ChevronRight,
   Download,
+  ExternalLink,
+  FileText,
+  Landmark,
   ShieldCheck,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const SLIDE_DURATION = 8000;
+const SLIDE_DURATION = 5000;
+const SLIDE_COUNT = 3;
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -20,18 +24,18 @@ export default function HeroSection() {
     if (isPaused) return undefined;
 
     const timer = window.setTimeout(() => {
-      setActiveSlide((current) => (current + 1) % 2);
+      setActiveSlide((current) => (current + 1) % SLIDE_COUNT);
     }, SLIDE_DURATION);
 
     return () => window.clearTimeout(timer);
   }, [activeSlide, isPaused]);
 
   const showPreviousSlide = () => {
-    setActiveSlide((current) => (current - 1 + 2) % 2);
+    setActiveSlide((current) => (current - 1 + SLIDE_COUNT) % SLIDE_COUNT);
   };
 
   const showNextSlide = () => {
-    setActiveSlide((current) => (current + 1) % 2);
+    setActiveSlide((current) => (current + 1) % SLIDE_COUNT);
   };
 
   return (
@@ -104,7 +108,7 @@ export default function HeroSection() {
               </div>
             </div>
           </motion.div>
-        ) : (
+        ) : activeSlide === 1 ? (
           <motion.div
             key="guia-nr01"
             className="absolute inset-0 flex items-center"
@@ -165,11 +169,84 @@ export default function HeroSection() {
               </div>
             </div>
           </motion.div>
+        ) : (
+          <motion.div
+            key="reforma-tributaria"
+            className="absolute inset-0 flex items-center"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            aria-hidden={activeSlide !== 2}
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(214,181,96,0.23),transparent_30%),linear-gradient(115deg,#19150f_0%,#3a2b18_55%,#705126_100%)]" />
+            <div className="absolute left-0 top-0 h-full w-full opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:48px_48px]" />
+
+            <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-28">
+              <div className="max-w-2xl">
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200/25 bg-amber-100/10 px-4 py-1.5 backdrop-blur-sm">
+                  <Landmark className="h-4 w-4 text-amber-200" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-50">
+                    Reforma Tributária
+                  </span>
+                </div>
+
+                <h2 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Entenda as mudanças e prepare sua empresa
+                </h2>
+
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-amber-50/75 sm:text-lg">
+                  Acesse a cartilha da FecomercioSP e aprofunde seus conhecimentos sobre as mudanças no sistema tributário brasileiro.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Button asChild size="lg" className="h-12 rounded-lg bg-primary px-7 font-semibold text-white shadow-lg shadow-black/20 hover:bg-primary/90">
+                    <Link to="/reforma-tributaria">
+                      Conheça o conteúdo
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="h-12 rounded-lg border-white/25 bg-transparent font-medium text-white hover:bg-white hover:text-[#3a2b18]">
+                    <a href="https://representa.fecomercio.com.br/orientacartilhas?utm_source=qr" target="_blank" rel="noopener noreferrer">
+                      Acessar a cartilha
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative hidden lg:block" aria-hidden="true">
+                <div className="absolute -inset-6 rotate-3 rounded-[2rem] border border-amber-100/10 bg-amber-100/5" />
+                <div className="relative mx-auto max-w-md -rotate-1 rounded-2xl border border-white/20 bg-[#f7f1e4] p-8 shadow-2xl shadow-black/40">
+                  <div className="flex items-start justify-between border-b border-[#cdbd9d] pb-5">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#9b2c31]">Cartilha</span>
+                      <p className="mt-1 text-sm font-semibold text-[#5f513c]">FecomercioSP</p>
+                    </div>
+                    <div className="grid h-12 w-12 place-items-center rounded-full bg-[#9b2c31] text-white">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                  </div>
+                  <p className="mt-7 font-display text-4xl font-bold leading-[1.05] text-[#302719]">
+                    Reforma<br />Tributária
+                  </p>
+                  <div className="mt-8 space-y-3">
+                    <div className="h-2 w-full rounded-full bg-[#d8ccb4]" />
+                    <div className="h-2 w-5/6 rounded-full bg-[#d8ccb4]" />
+                    <div className="h-2 w-2/3 rounded-full bg-[#d8ccb4]" />
+                  </div>
+                  <div className="mt-8 rounded-xl bg-[#eadfc9] p-4 text-sm font-medium text-[#5f513c]">
+                    Informação para preparar sua empresa para as mudanças.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
       <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 sm:bottom-7">
-        {[0, 1].map((slide) => (
+        {Array.from({ length: SLIDE_COUNT }, (_, slide) => (
           <button
             key={slide}
             type="button"
