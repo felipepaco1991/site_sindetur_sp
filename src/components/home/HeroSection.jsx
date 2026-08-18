@@ -8,13 +8,14 @@ import {
   Download,
   ExternalLink,
   FileText,
+  GraduationCap,
   Landmark,
   ShieldCheck,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const SLIDE_DURATION = 5000;
-const SLIDE_COUNT = 3;
+const SLIDE_COUNT = 4;
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -169,7 +170,7 @@ export default function HeroSection() {
               </div>
             </div>
           </motion.div>
-        ) : (
+        ) : activeSlide === 2 ? (
           <motion.div
             key="reforma-tributaria"
             className="absolute inset-0 flex items-center"
@@ -237,6 +238,71 @@ export default function HeroSection() {
                   </div>
                   <div className="mt-8 rounded-xl bg-[#eadfc9] p-4 text-sm font-medium text-[#5f513c]">
                     Informação para preparar sua empresa para as mudanças.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="radix"
+            className="absolute inset-0 flex items-center"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            aria-hidden={activeSlide !== 3}
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(77,160,126,0.24),transparent_31%),linear-gradient(115deg,#071c17_0%,#0b3329_56%,#145342_100%)]" />
+            <div className="absolute -right-24 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full border border-emerald-100/10" />
+            <div className="absolute -right-8 top-1/2 h-[27rem] w-[27rem] -translate-y-1/2 rounded-full border border-emerald-100/10" />
+
+            <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-28">
+              <div className="max-w-2xl">
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200/25 bg-emerald-100/10 px-4 py-1.5 backdrop-blur-sm">
+                  <GraduationCap className="h-4 w-4 text-emerald-200" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-50">
+                    Parceria Sindetur-SP + Radix
+                  </span>
+                </div>
+
+                <h2 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Formação para um mercado em constante evolução
+                </h2>
+
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-emerald-50/75 sm:text-lg">
+                  Conheça a programação de cursos e formações da Radix voltada ao desenvolvimento de competências estratégicas para profissionais do turismo.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Button asChild size="lg" className="h-12 rounded-lg bg-primary px-7 font-semibold text-white shadow-lg shadow-black/20 hover:bg-primary/90">
+                    <Link to="/radix">
+                      Conheça os cursos
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="h-12 rounded-lg border-white/25 bg-transparent font-medium text-white hover:bg-white hover:text-[#0b3329]">
+                    <a href="https://programaradix.com" target="_blank" rel="noopener noreferrer">
+                      Ver programação completa
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative hidden lg:block" aria-hidden="true">
+                <div className="absolute -inset-6 rotate-3 rounded-[2rem] border border-emerald-100/10 bg-emerald-100/5" />
+                <div className="relative mx-auto max-w-md -rotate-1 overflow-hidden rounded-2xl border border-white/20 bg-white shadow-2xl shadow-black/40">
+                  <div className="relative h-48 overflow-hidden bg-white">
+                    <img
+                      src="/assets/radix.jpg"
+                      alt=""
+                      className="absolute left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
+                    />
+                  </div>
+                  <div className="border-t border-emerald-950/10 bg-[#f5f7f6] px-7 py-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-900/55">Programa de formação</p>
+                    <p className="mt-1 text-sm font-medium text-emerald-950">Travel Design e turismo de alto padrão</p>
                   </div>
                 </div>
               </div>
