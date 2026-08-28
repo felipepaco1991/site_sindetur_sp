@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen, Handshake, GraduationCap, Landmark } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, FileSearch, ChevronDown, FileText, BookOpen, Handshake, GraduationCap, Landmark, CalendarDays } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   DropdownMenu,
@@ -18,6 +18,7 @@ const navLinks = [
     children: [
       { label: "Convênios", path: "/beneficios", icon: Handshake },
       { label: "Radix", path: "/radix", icon: GraduationCap },
+      { label: "Festuris Gramado 2026", path: "/festuris-gramado-2026", icon: CalendarDays },
     ],
   },
   { label: "CCT'S", path: "/cct" },

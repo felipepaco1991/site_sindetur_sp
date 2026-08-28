@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
   ArrowRight,
+  CalendarDays,
   ChevronRight,
   Download,
   ExternalLink,
@@ -15,7 +16,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 const SLIDE_DURATION = 5000;
-const SLIDE_COUNT = 4;
+const SLIDE_COUNT = 5;
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -243,7 +244,7 @@ export default function HeroSection() {
               </div>
             </div>
           </motion.div>
-        ) : (
+        ) : activeSlide === 3 ? (
           <motion.div
             key="radix"
             className="absolute inset-0 flex items-center"
@@ -305,6 +306,62 @@ export default function HeroSection() {
                     <p className="mt-1 text-sm font-medium text-emerald-950">Travel Design e turismo de alto padrão</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="festuris-gramado"
+            className="absolute inset-0 flex items-center"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.65, ease: "easeInOut" }}
+            aria-hidden={activeSlide !== 4}
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_24%,rgba(255,61,25,0.25),transparent_31%),linear-gradient(115deg,#050505_0%,#121212_58%,#2a0904_100%)]" />
+            <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,.25)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.25)_1px,transparent_1px)] [background-size:52px_52px]" />
+
+            <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-28">
+              <div className="max-w-2xl">
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff6847]/30 bg-[#ff4b27]/10 px-4 py-1.5 backdrop-blur-sm">
+                  <CalendarDays className="h-4 w-4 text-[#ff6847]" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb8a9]">
+                    12 a 15 de novembro • Gramado/RS
+                  </span>
+                </div>
+
+                <h2 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Sindetur-SP apoia o Festuris Gramado 2026
+                </h2>
+
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+                  Conexões, negócios e conteúdo em um dos grandes encontros do turismo nas Américas, com benefício exclusivo para associados no Meeting Festuris.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Button asChild size="lg" className="h-12 rounded-lg bg-primary px-7 font-semibold text-white shadow-lg shadow-black/20 hover:bg-primary/90">
+                    <Link to="/festuris-gramado-2026">
+                      Conheça a parceria
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="h-12 rounded-lg border-white/25 bg-transparent font-medium text-white hover:bg-white hover:text-[#111]">
+                    <a href="https://www.festurisgramado.com/meeting" target="_blank" rel="noopener noreferrer">
+                      Meeting Festuris
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative hidden lg:block" aria-hidden="true">
+                <div className="absolute -inset-6 rotate-3 rounded-[2rem] border border-[#ff6847]/15 bg-[#ff4b27]/5" />
+                <img
+                  src="https://cdn.prod.website-files.com/602bd3abd7ec5127354e0f26/6915dcd5947ae6043fe620fd_ac5195a24beb683541c59e22ab0bfc03_og-2026.jpg"
+                  alt=""
+                  className="relative w-full -rotate-1 rounded-2xl border border-white/15 shadow-2xl shadow-black/50"
+                />
               </div>
             </div>
           </motion.div>
