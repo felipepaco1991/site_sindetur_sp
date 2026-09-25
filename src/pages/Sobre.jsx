@@ -21,16 +21,16 @@ const actions = [
 ];
 
 const team = [
-  { name: "Carlos Schwartzmann", company: "Costa Brava", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Carlos-Swa.jpg" },
-  { name: "Auro Wandermüren", company: "Paxtour", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Auro.jpg" },
-  { name: "Flávia Pirola da Costa", company: "Tyller", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Flavia.jpg" },
-  { name: "Gregorio Polaino", company: "Ad Creatives", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Gregorio.jpg" },
-  { name: "Juarez Cintra Neto", company: "Ancoradouro", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Sem-Titulo-1.jpg" },
-  { name: "Karin Rocha", company: "CVC Corp", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Karin.jpg" },
-  { name: "Oskar Kedor", company: "Mobility", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Oskar.jpg" },
-  { name: "Renata Esteves dos Santos", company: "BeFly", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Renata.jpg" },
-  { name: "Sérgio Masaki Fumioka", company: "Quickly Travel", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Sergio.jpg" },
-  { name: "Tomas Martins Perez", company: "Teresa Perez Tours", photo: "https://sindetursp.org.br/wp-content/uploads/2026/05/Tomaz.jpg" },
+  { name: "Carlos Schwartzmann", company: "Costa Brava", photo: "/images/diretoria/Carlos-Schwartzman.jpeg" },
+  { name: "Auro Wandermüren", company: "Paxtour", photo: "/images/diretoria/Auro-Nardelli.jpeg" },
+  { name: "Flávia Pirola da Costa", company: "Tyller", photo: "/images/diretoria/Flavia-Pirola.webp", photoPosition: "25% top" },
+  { name: "Gregorio Polaino", company: "Ad Creatives", photo: "/images/diretoria/Gregorio-Polaino.png" },
+  { name: "Juarez Cintra Neto", company: "Ancoradouro", photo: "/images/diretoria/Juarez-Cintra.jpg" },
+  { name: "Karin Rocha", company: "CVC Corp", photo: "/images/diretoria/Karin-Rocha.jpeg" },
+  { name: "Oskar Kedor", company: "Mobility", photo: "/images/diretoria/Oskar-Kedor.webp" },
+  { name: "Renata Esteves dos Santos", company: "BeFly", photo: "/images/diretoria/Renata-Esteves.webp", photoPosition: "right top" },
+  { name: "Sérgio Masaki Fumioka", company: "Quickly Travel", photo: "/images/diretoria/Sergio-Fumioka.webp" },
+  { name: "Tomas Martins Perez", company: "Teresa Perez Tours", photo: "/images/diretoria/Tomas-Perez.webp" },
 ];
 
 const values = [
@@ -103,9 +103,11 @@ export default function Sobre() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <img
-                src="https://sindetursp.org.br/wp-content/uploads/2026/05/716f4fde9_generated_be87a3fb.png"
-                alt="Diretoria Sindetur-SP"
-                className="rounded-2xl shadow-lg w-full"
+                src="/images/logo-sindetur-75-anos.png"
+                alt="Sindetur-SP — 75 anos"
+                width={1024}
+                height={329}
+                className="w-full h-auto object-contain"
               />
             </motion.div>
           </div>
@@ -208,6 +210,8 @@ export default function Sobre() {
                   <img
                     src={member.photo}
                     alt={member.name}
+                    style={{ objectPosition: member.photoPosition ?? "center top" }}
+                    loading="lazy"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

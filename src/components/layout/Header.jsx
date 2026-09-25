@@ -71,7 +71,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.children
                 ? link.children.some((child) => location.pathname === child.path)
@@ -127,7 +127,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href="https://www.instagram.com/sindetursp?igsh=dWRiYzh6ajl6Zmgy"
               target="_blank"
@@ -154,17 +154,24 @@ export default function Header() {
                 Situação Financeira
               </Button>
             </a>
-            <Link to="/associe-se">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+              <Link to="/associe-se">
                 Associe-se
-              </Button>
-            </Link>
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+              <Link to="/contribuicao">
+                Contribua
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile Toggle */}
           <button
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="xl:hidden p-2 text-foreground"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -178,7 +185,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-border overflow-hidden"
+            className="xl:hidden bg-white border-t border-border overflow-hidden"
           >
             <nav className="px-4 py-4 space-y-1">
               {navLinks.map((link) => {
@@ -253,11 +260,16 @@ export default function Header() {
                     Minha Situação Financeira
                   </Button>
                 </a>
-                <Link to="/associe-se">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Link to="/associe-se">
                     Associe-se ao Sindetur-SP
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Link to="/contribuicao">
+                    Contribua
+                  </Link>
+                </Button>
               </div>
               <div className="flex gap-4 pt-3 justify-center">
                 <a href="https://www.instagram.com/sindetursp/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">

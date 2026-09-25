@@ -1,0 +1,2391 @@
+@font-face {
+  font-family: "Manrope Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(/fonts/manrope-latin-ext-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Manrope Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(/fonts/manrope-latin-wght-normal.woff2) format("woff2-variations");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "DM Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(/fonts/dm-sans-latin-ext-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "DM Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(/fonts/dm-sans-latin-wght-normal.woff2) format("woff2-variations");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+.contribution-page {
+  overflow-anchor: none;
+  font-family: "DM Sans Variable", sans-serif;
+  color: #252627;
+  background: #fafaf8;
+  font-synthesis: none;
+  font-weight: 400;
+  --red: #f51f2b;
+  --red-dark: #db1622;
+  --ink: #252627;
+  --muted: #727474;
+  --line: #e3e3df;
+  --cream: #fafaf8;
+}
+.contribution-page * {
+  box-sizing: border-box;
+}
+.contribution-page button,
+.contribution-page input,
+.contribution-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+.contribution-page button,
+.contribution-page input {
+  font: inherit;
+}
+.contribution-page button,
+.contribution-page a {
+  touch-action: manipulation;
+}
+.contribution-page button {
+  cursor: pointer;
+}
+.contribution-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.contribution-page button {
+  color: inherit;
+}
+.contribution-page img {
+  max-width: 100%;
+  display: block;
+}
+.contribution-page h1,
+.contribution-page h2,
+.contribution-page h3,
+.contribution-page h4,
+.contribution-page p {
+  margin: 0;
+}
+.contribution-page h1,
+.contribution-page h2,
+.contribution-page h3,
+.contribution-page h4 {
+  font-family: "Manrope Variable", sans-serif;
+}
+.contribution-page button:focus-visible,
+.contribution-page a:focus-visible,
+.contribution-page summary:focus-visible,
+.contribution-page [tabindex]:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 5px;
+}
+.contribution-page input:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+.contribution-page ::selection {
+  background: #ffd1d4;
+  color: #63121a;
+}
+.contribution-page .container {
+  width: min(1240px, calc(100% - 112px));
+  margin-inline: auto;
+}
+.contribution-page .section {
+  padding-block: 108px;
+}
+.contribution-page .red {
+  color: var(--red);
+}
+.contribution-page .eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.contribution-page .live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #f51f2b0c;
+  flex-shrink: 0;
+}
+.contribution-page .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 50px;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 650;
+  transition:
+    background 0.2s,
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.contribution-page .button svg {
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.contribution-page .button:hover svg,
+.contribution-page .text-link:hover svg {
+  transform: translate(3px, -3px);
+}
+.contribution-page .button:hover {
+  transform: translateY(-2px);
+}
+.contribution-page .button-red {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 6px 18px #ee1c2510;
+}
+.contribution-page .button-red:hover {
+  background: var(--red-dark);
+  box-shadow: 0 8px 24px #ee1c2522;
+}
+.contribution-page .button-dark {
+  background: #292a2b;
+  color: white;
+}
+.contribution-page .button-dark:hover {
+  background: #48494a;
+}
+.contribution-page .text-link {
+  font-size: 12px;
+  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.contribution-page .text-link svg {
+  transition: transform 0.25s;
+}
+.contribution-page .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.contribution-page .skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  padding: 16px;
+  background: var(--ink);
+  color: white;
+  z-index: 100;
+}
+.contribution-page .skip-link:focus {
+  top: 16px;
+}
+.contribution-page .scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--red);
+  transform-origin: left;
+  z-index: 60;
+}
+.contribution-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fafaf8f2;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e9e9e5;
+}
+.contribution-page .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 98px;
+}
+.contribution-page .brand {
+  width: 224px;
+  flex-shrink: 0;
+}
+.contribution-page .brand img {
+  width: 220px;
+  height: auto;
+}
+.contribution-page .brand > span {
+  font-size: 5.8px;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 7px;
+  color: #626363;
+}
+.contribution-page .desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+.contribution-page .desktop-nav a {
+  font-size: 12px;
+  position: relative;
+  padding-block: 12px;
+}
+.contribution-page .desktop-nav a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background: var(--red);
+  bottom: 4px;
+  transition: right 0.3s;
+}
+.contribution-page .desktop-nav a:hover:after {
+  right: 0;
+}
+.contribution-page .header-portal {
+  min-height: 41px;
+  padding: 11px 17px;
+  font-size: 10px;
+  gap: 17px;
+}
+.contribution-page .menu-toggle {
+  display: none;
+}
+.contribution-page .mobile-nav {
+  display: none;
+}
+.contribution-page .hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  padding-top: 68px;
+  padding-bottom: 60px;
+  align-items: center;
+}
+.contribution-page .hero-copy {
+  padding-bottom: 8px;
+}
+.contribution-page .hero-copy > .eyebrow {
+  margin-bottom: 22px;
+}
+.contribution-page h1 {
+  font-weight: 650;
+  letter-spacing: -3.8px;
+  font-size: clamp(56px, 5vw, 74px);
+  line-height: 1.065;
+  margin-top: 25px;
+  position: relative;
+  width: max-content;
+}
+.contribution-page h1 > span {
+  color: var(--red);
+}
+.contribution-page .heading-swoosh {
+  position: absolute;
+  bottom: -11px;
+  left: -2px;
+  width: 101%;
+  height: 14px;
+  color: var(--red);
+  opacity: 0.65;
+}
+.contribution-page .hero-description {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #666a64;
+  margin-top: 33px;
+}
+.contribution-page .hero-actions {
+  display: flex;
+  gap: 29px;
+  align-items: center;
+  margin-top: 28px;
+}
+.contribution-page .hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 33px;
+  font-size: 10px;
+  color: #666a64;
+}
+.contribution-page .hero-proof strong {
+  font-weight: 650;
+  color: #424344;
+}
+.contribution-page .proof-symbols {
+  display: flex;
+  padding-left: 2px;
+}
+.contribution-page .proof-symbols svg {
+  width: 28px;
+  height: 28px;
+  padding: 7px;
+  box-sizing: content-box;
+  background: #eeefeb;
+  border: 3px solid var(--cream);
+  border-radius: 50%;
+  margin-left: -6px;
+  color: #646764;
+}
+.contribution-page .hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0 0 28px 4px;
+}
+.contribution-page .hero-photo-frame {
+  height: 566px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #ccc;
+}
+.contribution-page .hero-photo {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  object-position: 35% 50%;
+  filter: saturate(0.8);
+  will-change: transform;
+}
+.contribution-page .photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #10202345, transparent 35%, #0b121c83);
+}
+.contribution-page .photo-top {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.contribution-page .photo-top > span {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contribution-page .photo-top .live-dot {
+  background: white;
+}
+.contribution-page .photo-bottom {
+  position: absolute;
+  bottom: 125px;
+  left: 31px;
+  right: 27px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  color: white;
+}
+.contribution-page .photo-bottom > span {
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 35px;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
+  font-weight: 350;
+}
+.contribution-page .photo-bottom strong {
+  font-weight: 600;
+}
+.contribution-page .photo-coordinate {
+  font-size: 7px;
+  letter-spacing: 1px;
+  line-height: 1.9;
+  text-align: right;
+}
+.contribution-page .anniversary {
+  position: absolute;
+  top: 52px;
+  right: -25px;
+  width: 135px;
+  height: 135px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  border: 5px solid var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(10deg);
+  box-shadow: 0 10px 30px #23232215;
+}
+.contribution-page .anniversary-top {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+.contribution-page .anniversary strong {
+  font-family: "Manrope Variable";
+  font-size: 60px;
+  letter-spacing: -5px;
+  font-weight: 650;
+  line-height: 1.13;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.contribution-page .anniversary strong > span {
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+.contribution-page .anniversary-bottom {
+  font-size: 6px;
+  letter-spacing: 1.1px;
+  margin-top: 4px;
+}
+.contribution-page .anniversary-spark {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  font-size: 30px;
+  color: var(--red);
+  background: var(--cream);
+  border-radius: 50%;
+  line-height: 1;
+}
+.contribution-page .floating-ticket {
+  position: absolute;
+  bottom: 47px;
+  left: -25px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 6px;
+  background: #fffffff2;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 35px #24242412;
+  padding: 20px 21px;
+}
+.contribution-page .ticket-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  background: #fff0f1;
+  color: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.contribution-page .floating-ticket > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contribution-page .floating-ticket strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+.contribution-page .floating-ticket > div > span {
+  font-size: 9px;
+  color: #666a64;
+}
+.contribution-page .floating-ticket > svg {
+  margin-left: auto;
+  color: var(--red);
+}
+.contribution-page .visual-caption {
+  position: absolute;
+  bottom: 1px;
+  right: 0;
+  font-size: 7px;
+  letter-spacing: 1.3px;
+  color: #666a64;
+}
+.contribution-page .stats-section {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-block: 36px 44px;
+  gap: 20px;
+}
+.contribution-page .stats-intro .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.25px;
+  color: #666a64;
+}
+.contribution-page .stats-intro p {
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 10px;
+  color: #666a64;
+}
+.contribution-page .stats-intro strong {
+  color: #3b3d3d;
+  font-weight: 500;
+}
+.contribution-page .stat {
+  border-left: 1px solid var(--line);
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contribution-page .stat > strong {
+  font-family: "Manrope Variable";
+  font-size: 43px;
+  letter-spacing: -2px;
+  color: var(--red);
+  font-weight: 550;
+  line-height: 1.1;
+}
+.contribution-page .stat-unit {
+  font-size: 26px;
+  letter-spacing: -1px;
+}
+.contribution-page .stat > span {
+  font-size: 10px;
+  color: #666a64;
+}
+.contribution-page .marquee {
+  overflow: hidden;
+  padding: 20px 0;
+  background: var(--red);
+  color: white;
+}
+.contribution-page .marquee-track {
+  display: flex;
+  width: max-content;
+  animation: contribution-marquee 45s linear infinite;
+}
+.contribution-page .marquee-set {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+.contribution-page .marquee-star {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.contribution-page .marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes contribution-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.contribution-page h2 {
+  font-size: clamp(33px, 3.1vw, 43px);
+  line-height: 1.22;
+  letter-spacing: -1.9px;
+  font-weight: 600;
+}
+.contribution-page .about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: center;
+}
+.contribution-page .about-art {
+  height: 410px;
+  background: #f0f0eb;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  padding: 28px 32px;
+  color: var(--red);
+}
+.contribution-page .art-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#deded950 1px, transparent 1px),
+    linear-gradient(90deg, #deded950 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(130deg, black, transparent 85%);
+}
+.contribution-page .art-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  position: relative;
+}
+.contribution-page .giant-75 {
+  position: relative;
+  z-index: 1;
+  font-family: "Manrope Variable";
+  font-weight: 550;
+  font-size: 222px;
+  letter-spacing: -21px;
+  line-height: 1.05;
+  margin-top: 21px;
+  display: flex;
+  align-items: flex-end;
+  gap: 27px;
+}
+.contribution-page .giant-75 > span {
+  font-family: "DM Sans Variable";
+  font-size: 8px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  padding-bottom: 18px;
+}
+.contribution-page .orbit {
+  position: absolute;
+  border: 1px solid #f51f2b24;
+  border-radius: 50%;
+  width: 430px;
+  height: 200px;
+  transform: rotate(-45deg);
+  right: -140px;
+  top: 30px;
+}
+.contribution-page .orbit-two {
+  width: 570px;
+  height: 320px;
+  right: -175px;
+  top: 0;
+}
+.contribution-page .art-globe {
+  position: absolute;
+  right: 31px;
+  top: 90px;
+  stroke-width: 1;
+  animation: contribution-spin 55s linear infinite;
+}
+.contribution-page .art-foot {
+  position: absolute;
+  bottom: 27px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contribution-page .art-foot > span {
+  font-size: 8px;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+  color: #666a64;
+}
+.contribution-page .art-foot > svg {
+  stroke-width: 1;
+}
+.contribution-page .about-copy > .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  margin-bottom: 20px;
+}
+.contribution-page .about-copy > p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #666a64;
+  margin-top: 19px;
+}
+.contribution-page .about-copy > p strong {
+  color: #373838;
+}
+.contribution-page .about-note {
+  display: flex;
+  gap: 15px;
+  margin: 26px 0;
+}
+.contribution-page .note-line {
+  width: 2px;
+  background: var(--red);
+}
+.contribution-page .about-note p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #666a64;
+}
+.contribution-page .about-note strong {
+  font-weight: 500;
+  color: #373838;
+}
+.contribution-page .impact {
+  background: #f1f2ee;
+}
+.contribution-page .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.contribution-page .section-heading .eyebrow {
+  margin-bottom: 18px;
+  font-size: 9px;
+}
+.contribution-page .section-heading > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #666a64;
+  padding-bottom: 4px;
+}
+.contribution-page .impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.contribution-page .impact-card {
+  background: #fafaf8;
+  border: 1px solid #e4e5e0;
+  border-radius: 6px;
+  padding: 29px 28px 24px;
+  transition:
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.contribution-page .impact-card:hover {
+  box-shadow: 0 14px 30px #34342c0a;
+  border-color: #f51f2b70;
+}
+.contribution-page .card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  color: var(--red);
+}
+.contribution-page .card-top > span {
+  font-size: 10px;
+  color: #666a64;
+}
+.contribution-page .impact-card h3 {
+  font-size: 18px;
+  letter-spacing: -0.55px;
+  font-weight: 600;
+  max-width: 200px;
+  line-height: 1.45;
+}
+.contribution-page .impact-card p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #666a64;
+  margin-top: 15px;
+  min-height: 65px;
+}
+.contribution-page .card-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  margin-top: 29px;
+  padding-top: 20px;
+  font-size: 7px;
+  letter-spacing: 1.3px;
+  color: #656764;
+}
+.contribution-page .card-tag svg {
+  color: var(--red);
+}
+.contribution-page .impact-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.contribution-page .impact-note > p {
+  font-size: 10px;
+  color: #666a64;
+  line-height: 1.6;
+}
+.contribution-page .note-check {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3e6dd;
+  color: #6d7a62;
+  flex-shrink: 0;
+}
+.contribution-page .contribution-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.contribution-page .contribution-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 13px;
+  border: 0;
+  background: none;
+  padding: 20px 21px;
+  position: relative;
+  color: #666a64;
+  border-bottom: 2px solid transparent;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.contribution-page .contribution-tabs button.active {
+  border-bottom-color: var(--red);
+  color: var(--red);
+  background: #fff2f2;
+}
+.contribution-page .contribution-tabs button:hover {
+  background: #fff2f2;
+}
+.contribution-page .contribution-tabs button > svg:last-child {
+  margin-left: auto;
+}
+.contribution-page .contribution-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  min-height: 340px;
+}
+.contribution-page .contribution-main {
+  padding: 38px 42px;
+}
+.contribution-page .contribution-main > .eyebrow {
+  font-size: 8px;
+  color: var(--red);
+}
+.contribution-page .contribution-main h3 {
+  font-size: 25px;
+  line-height: 1.35;
+  letter-spacing: -0.8px;
+  margin: 18px 0;
+  max-width: 340px;
+  font-weight: 600;
+}
+.contribution-page .contribution-main > p {
+  font-size: 13px;
+  color: #666a64;
+  line-height: 1.85;
+  max-width: 385px;
+}
+.contribution-page .contribution-main ul {
+  list-style: none;
+  display: grid;
+  gap: 13px;
+  margin: 23px 0 0;
+  padding: 0;
+}
+.contribution-page .contribution-main li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #5c5e5b;
+}
+.contribution-page .contribution-main li > svg {
+  color: var(--red);
+}
+.contribution-page .contribution-side {
+  margin: 14px;
+  background: #f1f2ee;
+  border-radius: 4px;
+  padding: 24px 29px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.contribution-page .portal-icon {
+  color: var(--red);
+  margin-bottom: 17px;
+}
+.contribution-page .contribution-side h4 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+.contribution-page .contribution-side p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #666a64;
+  margin-top: 12px;
+}
+.contribution-page .contribution-side .button {
+  margin-top: 22px;
+  min-height: 44px;
+  font-size: 11px;
+  width: 100%;
+  justify-content: space-between;
+}
+.contribution-page .portal-secure {
+  font-size: 8px;
+  color: #666a64;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  align-self: center;
+  margin-top: 12px;
+}
+.contribution-page .historical {
+  border-bottom: 1px solid var(--line);
+  margin-top: 15px;
+}
+.contribution-page .historical summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  padding: 22px 5px;
+  cursor: pointer;
+  list-style: none;
+  color: #666a64;
+}
+.contribution-page .historical summary::-webkit-details-marker {
+  display: none;
+}
+.contribution-page .historical summary > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contribution-page .historical[open] summary > svg {
+  transform: rotate(45deg);
+}
+.contribution-page .historical-body {
+  padding: 10px 20px 30px;
+  font-size: 12px;
+  color: #666a64;
+  line-height: 1.8;
+}
+.contribution-page .historical-body h4 {
+  font-size: 16px;
+  color: var(--ink);
+  margin: 26px 0 10px;
+}
+.contribution-page .historical-body p {
+  margin-block: 12px;
+}
+.contribution-page .table-scroll {
+  overflow-x: auto;
+  margin: 15px 0;
+}
+.contribution-page table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 11px;
+  text-align: left;
+  min-width: 550px;
+}
+.contribution-page th {
+  background: #eee;
+  white-space: nowrap;
+}
+.contribution-page td,
+.contribution-page th {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+.contribution-page .portal-strip {
+  background: #efefeb;
+  border-block: 1px solid #e8e8e2;
+  padding-block: 34px;
+}
+.contribution-page .portal-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.contribution-page .portal-strip-icon {
+  background: #e3e4dd;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #65685f;
+}
+.contribution-page .portal-strip .eyebrow {
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  color: #666a64;
+}
+.contribution-page .portal-strip h3 {
+  font-size: 21px;
+  letter-spacing: -0.6px;
+  font-weight: 550;
+  margin-block: 7px;
+}
+.contribution-page .portal-strip p {
+  font-size: 11px;
+  color: #666a64;
+}
+.contribution-page .portal-strip .button {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 10px;
+}
+.contribution-page .faq {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+}
+.contribution-page .faq-intro > .eyebrow {
+  margin-bottom: 20px;
+  font-size: 9px;
+}
+.contribution-page .faq-intro > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #666a64;
+  margin: 20px 0 27px;
+}
+.contribution-page .faq-list {
+  border-top: 1px solid var(--line);
+}
+.contribution-page .faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.contribution-page .faq-item h3 > button {
+  background: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding: 22px 0;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.6;
+}
+.contribution-page .faq-item button > svg {
+  flex-shrink: 0;
+  color: #666a64;
+}
+.contribution-page .faq-item.is-open button > svg {
+  color: var(--red);
+}
+.contribution-page .faq-item [role="region"] {
+  padding: 0 30px 22px 0;
+}
+.contribution-page .faq-item p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #666a64;
+}
+.contribution-page .faq-item .text-link {
+  font-size: 11px;
+  margin-top: 15px;
+  color: var(--red);
+}
+.contribution-page .contact-section {
+  background: var(--red);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.contribution-page .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: center;
+  padding-block: 80px;
+}
+.contribution-page .contact-copy {
+  position: relative;
+}
+.contribution-page .contact-copy > .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  opacity: 0.85;
+}
+.contribution-page .contact-copy .live-dot {
+  background: #fff;
+  box-shadow: 0 0 0 4px #ffffff15;
+}
+.contribution-page .contact-copy h2 {
+  font-size: 44px;
+  line-height: 1.25;
+  letter-spacing: -1.8px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+.contribution-page .contact-copy h2 > span {
+  color: #ffbbbe;
+}
+.contribution-page .contact-copy > p {
+  font-size: 12px;
+  line-height: 1.9;
+  max-width: 340px;
+  margin-top: 25px;
+  color: #ffe1e3;
+  position: relative;
+  z-index: 1;
+}
+.contribution-page .contact-promise {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+.contribution-page .contact-promise > span {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #ffc4c8;
+}
+.contribution-page .contact-promise strong {
+  color: #fff;
+  font-weight: 500;
+}
+.contribution-page .contact-orbit {
+  width: 430px;
+  height: 430px;
+  position: absolute;
+  border: 1px solid #ffffff15;
+  border-radius: 50%;
+  left: -190px;
+  bottom: -300px;
+  pointer-events: none;
+}
+.contribution-page .contact-orbit:before,
+.contribution-page .contact-orbit:after {
+  content: "";
+  position: absolute;
+  inset: 35px;
+  border: 1px solid #ffffff15;
+  border-radius: 50%;
+}
+.contribution-page .contact-orbit:after {
+  inset: 70px;
+}
+.contribution-page .contact-form-card {
+  background: var(--cream);
+  color: var(--ink);
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px #7f030c14;
+  position: relative;
+  z-index: 1;
+}
+.contribution-page .contact-form-card > h3 {
+  font-size: 21px;
+  letter-spacing: -0.65px;
+  font-weight: 600;
+}
+.contribution-page .contact-form-card > p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #666a64;
+  margin-top: 10px;
+  max-width: 330px;
+}
+.contribution-page .contact-form-card form {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contribution-page .contact-form-card label {
+  font-size: 10px;
+  font-weight: 550;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+}
+.contribution-page .contact-form-card input {
+  min-width: 0;
+  background: white;
+  border: 1px solid #e0e0db;
+  padding: 12px;
+  font-size: 10px;
+  border-radius: 4px;
+  color: var(--ink);
+  width: 100%;
+  min-height: 42px;
+}
+.contribution-page .contact-form-card input::placeholder {
+  color: #666a64;
+}
+.contribution-page .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contribution-page .contact-form-card .button {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3px;
+  font-size: 11px;
+  min-height: 47px;
+}
+.contribution-page .form-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  font-size: 8px;
+  color: #666a64;
+  line-height: 1.65;
+  text-align: center;
+  margin-bottom: -6px;
+}
+.contribution-page .form-disclaimer svg {
+  flex-shrink: 0;
+}
+.contribution-page .email-ready {
+  border: 1px solid #c9d9c3;
+  border-radius: 5px;
+  padding: 15px;
+  background: #f0f5ed;
+  font-size: 11px;
+}
+.contribution-page .email-ready strong {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #3f5e32;
+}
+.contribution-page .email-ready p {
+  line-height: 1.7;
+  margin: 10px 0;
+  color: #6c7568;
+}
+.contribution-page .email-ready a {
+  font-size: 11px;
+  color: #375b2a;
+}
+.contribution-page footer {
+  background: var(--cream);
+}
+.contribution-page .footer-main {
+  display: grid;
+  grid-template-columns: 1.2fr 0.7fr 1.5fr 0.5fr;
+  gap: 40px;
+  padding-block: 62px 46px;
+}
+.contribution-page .footer-brand img {
+  width: 185px;
+  height: auto;
+}
+.contribution-page .footer-brand p {
+  font-size: 10px;
+  line-height: 1.9;
+  color: #666a64;
+  margin-top: 17px;
+}
+.contribution-page .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 17px;
+  color: #666a64;
+}
+.contribution-page .social-links a:hover {
+  color: var(--red);
+}
+.contribution-page .footer-main h4 {
+  font-size: 11px;
+  font-weight: 650;
+  margin-bottom: 22px;
+}
+.contribution-page .footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+.contribution-page .footer-nav h4 {
+  margin-bottom: 7px;
+}
+.contribution-page .footer-nav a,
+.contribution-page .footer-contact a,
+.contribution-page .footer-contact p {
+  font-size: 10px;
+  color: #666a64;
+}
+.contribution-page .footer-nav a:hover,
+.contribution-page .footer-contact a:hover {
+  color: var(--red);
+}
+.contribution-page .footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.contribution-page .footer-contact h4 {
+  margin-bottom: 6px;
+}
+.contribution-page .footer-contact a,
+.contribution-page .footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contribution-page .footer-contact p {
+  align-items: flex-start;
+  line-height: 1.9;
+}
+.contribution-page .footer-contact svg {
+  color: #666a64;
+  flex-shrink: 0;
+}
+.contribution-page .footer-seal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
+  align-self: start;
+  min-height: 112px;
+}
+.contribution-page .footer-seal > span {
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.contribution-page .footer-seal strong {
+  font-family: "Manrope Variable";
+  font-size: 58px;
+  letter-spacing: -4px;
+  font-weight: 550;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  line-height: 1.3;
+}
+.contribution-page .footer-seal small {
+  font-size: 12px;
+  letter-spacing: -0.3px;
+}
+.contribution-page .footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-block: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+  color: #666a64;
+  gap: 20px;
+}
+.contribution-page .footer-bottom > a {
+  color: #5f615a;
+}
+.contribution-page .footer-bottom > a > svg {
+  transform: rotate(-90deg);
+}
+@keyframes contribution-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 1600px) {
+  .contribution-page .hero {
+    padding-block: 85px 70px;
+  }
+  .contribution-page .hero-photo-frame {
+    height: 610px;
+  }
+  .contribution-page h1 {
+    font-size: 78px;
+  }
+}
+@media (max-width: 1150px) {
+  .contribution-page .container {
+    width: calc(100% - 72px);
+  }
+  .contribution-page .desktop-nav {
+    gap: 18px;
+  }
+  .contribution-page .header-inner {
+    gap: 20px;
+  }
+  .contribution-page .brand {
+    width: 190px;
+  }
+  .contribution-page .brand img {
+    width: 190px;
+  }
+  .contribution-page .brand > span {
+    font-size: 5px;
+  }
+  .contribution-page .hero {
+    gap: 35px;
+    padding-top: 52px;
+  }
+  .contribution-page h1 {
+    font-size: 59px;
+    letter-spacing: -3px;
+  }
+  .contribution-page .hero-photo-frame {
+    height: 540px;
+  }
+  .contribution-page .hero-actions {
+    gap: 20px;
+  }
+  .contribution-page .hero-actions .button {
+    padding-inline: 17px;
+    gap: 18px;
+  }
+  .contribution-page .hero-actions .text-link {
+    font-size: 11px;
+  }
+  .contribution-page .photo-bottom {
+    left: 23px;
+  }
+  .contribution-page .floating-ticket {
+    right: 15px;
+    left: -20px;
+    padding: 17px 15px;
+    gap: 10px;
+  }
+  .contribution-page .floating-ticket strong {
+    font-size: 11px;
+  }
+  .contribution-page .floating-ticket > div > span {
+    font-size: 8px;
+  }
+  .contribution-page .anniversary {
+    right: -17px;
+    width: 120px;
+    height: 120px;
+  }
+  .contribution-page .anniversary strong {
+    font-size: 52px;
+  }
+  .contribution-page .about {
+    gap: 55px;
+  }
+  .contribution-page .giant-75 {
+    font-size: 188px;
+    gap: 17px;
+  }
+  .contribution-page .giant-75 > span {
+    font-size: 7px;
+  }
+  .contribution-page .contact-grid {
+    gap: 50px;
+  }
+  .contribution-page .contact-copy h2 {
+    font-size: 39px;
+  }
+  .contribution-page .contribution-main {
+    padding: 32px;
+  }
+  .contribution-page .footer-main {
+    gap: 25px;
+  }
+  .contribution-page .footer-contact a {
+    font-size: 9px;
+  }
+  .contribution-page .section {
+    padding-block: 85px;
+  }
+}
+@media (max-width: 900px) {
+  .contribution-page .desktop-nav {
+    display: none;
+  }
+  .contribution-page .header-inner {
+    min-height: 85px;
+  }
+  .contribution-page .header-portal {
+    margin-left: auto;
+  }
+  .contribution-page .menu-toggle {
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+  }
+  .contribution-page .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-inline: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .contribution-page .mobile-nav > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 0;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line);
+  }
+  .contribution-page .mobile-nav > a:last-child {
+    margin-bottom: 15px;
+  }
+  .contribution-page .hero {
+    gap: 25px;
+  }
+  .contribution-page .hero h1 {
+    font-size: 53px;
+  }
+  .contribution-page .hero-description {
+    font-size: 12px;
+  }
+  .contribution-page .desktop-break {
+    display: none;
+  }
+  .contribution-page .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contribution-page .hero-photo-frame {
+    height: 555px;
+  }
+  .contribution-page .hero-proof {
+    font-size: 9px;
+    gap: 7px;
+  }
+  .contribution-page .proof-symbols svg {
+    width: 12px;
+    height: 12px;
+    padding: 6px;
+  }
+  .contribution-page .photo-coordinate {
+    display: none;
+  }
+  .contribution-page .floating-ticket > svg {
+    display: none;
+  }
+  .contribution-page .floating-ticket {
+    left: -14px;
+    right: 10px;
+    gap: 9px;
+    padding: 15px 12px;
+  }
+  .contribution-page .floating-ticket strong {
+    font-size: 9px;
+  }
+  .contribution-page .ticket-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .contribution-page .ticket-icon svg {
+    width: 21px;
+  }
+  .contribution-page .floating-ticket > div > span {
+    font-size: 7px;
+  }
+  .contribution-page .anniversary {
+    top: 60px;
+    width: 105px;
+    height: 105px;
+  }
+  .contribution-page .anniversary strong {
+    font-size: 44px;
+    letter-spacing: -3px;
+  }
+  .contribution-page .anniversary-top {
+    font-size: 6px;
+  }
+  .contribution-page .anniversary-bottom {
+    font-size: 5px;
+  }
+  .contribution-page .anniversary strong > span {
+    font-size: 11px;
+  }
+  .contribution-page .photo-top {
+    left: 18px;
+    right: 18px;
+  }
+  .contribution-page .photo-top > span {
+    font-size: 6px;
+  }
+  .contribution-page .stats-section {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .contribution-page .stats-intro {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+  }
+  .contribution-page .stats-intro p {
+    margin-top: 0;
+  }
+  .contribution-page .stat {
+    padding-left: 24px;
+  }
+  .contribution-page .stat:nth-child(2) {
+    border: 0;
+    padding-left: 0;
+  }
+  .contribution-page .stat > strong {
+    font-size: 38px;
+  }
+  .contribution-page .stat > span {
+    font-size: 9px;
+  }
+  .contribution-page .about {
+    gap: 32px;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .contribution-page .about-art {
+    height: 360px;
+    padding: 23px;
+  }
+  .contribution-page .giant-75 {
+    font-size: 178px;
+    display: block;
+    letter-spacing: -17px;
+    margin-top: 30px;
+  }
+  .contribution-page .giant-75 > span {
+    display: none;
+  }
+  .contribution-page .art-foot {
+    left: 23px;
+    right: 23px;
+  }
+  .contribution-page .art-foot > span {
+    font-size: 6px;
+  }
+  .contribution-page .about-copy > .eyebrow {
+    font-size: 7px;
+  }
+  .contribution-page .about h2 {
+    font-size: 30px;
+  }
+  .contribution-page .about-copy > p {
+    font-size: 11px;
+  }
+  .contribution-page .section-heading {
+    gap: 25px;
+  }
+  .contribution-page .section-heading > p {
+    max-width: 260px;
+    font-size: 11px;
+  }
+  .contribution-page .impact-grid {
+    gap: 12px;
+  }
+  .contribution-page .impact-card {
+    padding: 23px 19px;
+  }
+  .contribution-page .impact-card h3 {
+    font-size: 16px;
+  }
+  .contribution-page .impact-card p {
+    font-size: 10px;
+    min-height: 92px;
+  }
+  .contribution-page .card-tag {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .contribution-page .contribution-tabs button {
+    padding-inline: 14px;
+    font-size: 12px;
+    gap: 9px;
+  }
+  .contribution-page .contribution-main {
+    padding: 28px;
+  }
+  .contribution-page .contribution-main h3 {
+    font-size: 23px;
+  }
+  .contribution-page .contribution-side {
+    padding: 23px;
+  }
+  .contribution-page .contribution-side h4 {
+    font-size: 16px;
+  }
+  .contribution-page .contribution-side .button {
+    font-size: 9px;
+    gap: 10px;
+    padding-inline: 14px;
+  }
+  .contribution-page .portal-strip-inner {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .contribution-page .portal-strip .button {
+    margin-left: 85px;
+  }
+  .contribution-page .portal-strip h3 {
+    font-size: 20px;
+  }
+  .contribution-page .faq {
+    gap: 38px;
+    grid-template-columns: 0.9fr 1.3fr;
+  }
+  .contribution-page .faq h2 {
+    font-size: 32px;
+  }
+  .contribution-page .faq-item h3 > button {
+    font-size: 11px;
+  }
+  .contribution-page .contact-grid {
+    gap: 32px;
+  }
+  .contribution-page .contact-copy h2 {
+    font-size: 33px;
+  }
+  .contribution-page .contact-form-card {
+    padding: 25px;
+  }
+  .contribution-page .contact-form-card h3 {
+    font-size: 18px;
+  }
+  .contribution-page .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contribution-page .contact-copy > .eyebrow {
+    font-size: 7px;
+  }
+  .contribution-page .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 50px;
+  }
+  .contribution-page .footer-brand {
+    grid-column: 1;
+  }
+  .contribution-page .footer-seal {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 130px;
+  }
+  .contribution-page .footer-contact {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .contribution-page .footer-nav {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .contribution-page .footer-bottom > span:nth-child(2) {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .contribution-page .container {
+    width: calc(100% - 40px);
+  }
+  .contribution-page .header-inner {
+    min-height: 77px;
+    gap: 10px;
+  }
+  .contribution-page .brand {
+    width: 164px;
+  }
+  .contribution-page .brand img {
+    width: 164px;
+  }
+  .contribution-page .brand > span {
+    font-size: 4.3px;
+    letter-spacing: 0.4px;
+  }
+  .contribution-page .header-portal {
+    min-height: 34px;
+    font-size: 0;
+    padding: 8px;
+    border-radius: 4px;
+    gap: 0;
+  }
+  .contribution-page .header-portal svg {
+    width: 18px;
+    height: 18px;
+  }
+  .contribution-page .header-portal:before {
+    content: "Portal";
+    font-size: 10px;
+    margin-right: 9px;
+  }
+  .contribution-page .header-portal .sr-only {
+    font-size: 10px;
+  }
+  .contribution-page .menu-toggle {
+    padding: 6px;
+  }
+  .contribution-page .menu-toggle svg {
+    width: 22px;
+  }
+  .contribution-page .mobile-nav {
+    padding-inline: 20px;
+  }
+  .contribution-page .hero {
+    grid-template-columns: 1fr;
+    padding-top: 38px;
+    padding-bottom: 36px;
+    gap: 39px;
+  }
+  .contribution-page .hero-copy {
+    padding: 0;
+  }
+  .contribution-page .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+  .contribution-page .hero h1 {
+    font-size: clamp(52px, 12.8vw, 73px);
+    line-height: 1.06;
+    letter-spacing: -3.3px;
+    margin-top: 22px;
+  }
+  .contribution-page .hero h1 {
+    width: auto;
+  }
+  .contribution-page .hero-copy {
+    min-width: 0;
+  }
+  .contribution-page .hero-description {
+    font-size: 12px;
+    line-height: 1.85;
+    max-width: 355px;
+    margin-top: 30px;
+  }
+  .contribution-page .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .contribution-page .hero-actions .button {
+    font-size: 11px;
+    padding: 14px 17px;
+    gap: 16px;
+    min-height: 48px;
+  }
+  .contribution-page .hero-actions .text-link {
+    font-size: 10px;
+    gap: 8px;
+  }
+  .contribution-page .hero-proof {
+    margin-top: 23px;
+    font-size: 9px;
+    gap: 10px;
+  }
+  .contribution-page .proof-symbols svg {
+    width: 13px;
+    height: 13px;
+    padding: 6px;
+  }
+  .contribution-page .hero-visual {
+    padding: 0 0 28px;
+  }
+  .contribution-page .hero-photo-frame {
+    height: 385px;
+    border-radius: 8px;
+  }
+  .contribution-page .hero-photo {
+    object-position: 50% 50%;
+  }
+  .contribution-page .photo-top {
+    top: 23px;
+    left: 22px;
+    right: 22px;
+  }
+  .contribution-page .photo-top > span {
+    font-size: 7px;
+  }
+  .contribution-page .photo-bottom {
+    bottom: 115px;
+    left: 23px;
+  }
+  .contribution-page .photo-bottom > span {
+    font-size: 32px;
+  }
+  .contribution-page .photo-coordinate {
+    display: block;
+    font-size: 6px;
+  }
+  .contribution-page .anniversary {
+    width: 108px;
+    height: 108px;
+    top: 64px;
+    right: -10px;
+  }
+  .contribution-page .anniversary strong {
+    font-size: 47px;
+  }
+  .contribution-page .anniversary-top {
+    font-size: 6px;
+  }
+  .contribution-page .anniversary-bottom {
+    font-size: 5.3px;
+  }
+  .contribution-page .floating-ticket {
+    left: 12px;
+    right: 12px;
+    bottom: 45px;
+    padding: 16px;
+    gap: 11px;
+  }
+  .contribution-page .floating-ticket strong {
+    font-size: 10px;
+  }
+  .contribution-page .floating-ticket > div > span {
+    font-size: 8px;
+  }
+  .contribution-page .floating-ticket > svg {
+    display: block;
+    width: 18px;
+  }
+  .contribution-page .ticket-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .contribution-page .visual-caption {
+    font-size: 6px;
+    letter-spacing: 1.1px;
+  }
+  .contribution-page .stats-section {
+    padding-block: 26px 32px;
+    gap: 9px;
+  }
+  .contribution-page .stats-intro {
+    gap: 12px;
+    padding-bottom: 15px;
+  }
+  .contribution-page .stats-intro .eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+    max-width: 95px;
+    line-height: 1.8;
+  }
+  .contribution-page .stats-intro p {
+    font-size: 9px;
+  }
+  .contribution-page .stat {
+    padding-left: 15px;
+    gap: 8px;
+  }
+  .contribution-page .stat > strong {
+    font-size: 31px;
+    letter-spacing: -1.5px;
+  }
+  .contribution-page .stat-unit {
+    font-size: 16px;
+    letter-spacing: -0.6px;
+  }
+  .contribution-page .stat > span {
+    font-size: 8px;
+    line-height: 1.6;
+    max-width: 90px;
+  }
+  .contribution-page .marquee {
+    padding-block: 16px;
+  }
+  .contribution-page .marquee-set {
+    gap: 27px;
+    padding-right: 27px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .contribution-page .marquee-star {
+    font-size: 19px;
+  }
+  .contribution-page .section {
+    padding-block: 64px;
+  }
+  .contribution-page .about {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .contribution-page .about-art {
+    height: 330px;
+    order: 2;
+    padding: 27px;
+  }
+  .contribution-page .giant-75 {
+    font-size: 192px;
+    display: flex;
+    gap: 29px;
+    margin-top: 6px;
+  }
+  .contribution-page .giant-75 > span {
+    display: block;
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+  .contribution-page .art-foot {
+    bottom: 23px;
+    left: 27px;
+    right: 27px;
+  }
+  .contribution-page .art-foot > span {
+    font-size: 7px;
+  }
+  .contribution-page .about h2,
+  .contribution-page h2 {
+    font-size: 33px;
+    letter-spacing: -1.5px;
+  }
+  .contribution-page .about-copy > .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+    margin-bottom: 17px;
+  }
+  .contribution-page .about-copy > p {
+    font-size: 14px;
+    margin-top: 18px;
+  }
+  .contribution-page .about-note {
+    margin: 22px 0;
+  }
+  .contribution-page .section-heading {
+    display: block;
+    margin-bottom: 28px;
+  }
+  .contribution-page .section-heading .eyebrow {
+    font-size: 8px;
+    margin-bottom: 17px;
+  }
+  .contribution-page .section-heading > p {
+    font-size: 12px;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  .contribution-page .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .contribution-page .impact-card {
+    padding: 25px;
+  }
+  .contribution-page .card-top {
+    margin-bottom: 23px;
+  }
+  .contribution-page .impact-card h3 {
+    font-size: 20px;
+    max-width: none;
+  }
+  .contribution-page .impact-card p {
+    font-size: 12px;
+    min-height: 0;
+    margin-top: 12px;
+    max-width: 310px;
+  }
+  .contribution-page .card-tag {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+    margin-top: 24px;
+    padding-top: 17px;
+  }
+  .contribution-page .impact-note {
+    align-items: flex-start;
+    margin-top: 23px;
+  }
+  .contribution-page .impact-note > p {
+    font-size: 10px;
+  }
+  .contribution-page .contribution-tabs {
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .contribution-page .contribution-tabs button {
+    flex-direction: column;
+    padding: 15px 5px;
+    gap: 10px;
+    font-size: 10px;
+    min-height: 78px;
+    justify-content: center;
+  }
+  .contribution-page .contribution-tabs button > svg:last-child {
+    display: none;
+  }
+  .contribution-page .contribution-tabs button > svg:first-child {
+    width: 18px;
+    height: 18px;
+  }
+  .contribution-page .contribution-panel {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .contribution-page .contribution-main {
+    padding: 28px 23px;
+  }
+  .contribution-page .contribution-main h3 {
+    font-size: 25px;
+  }
+  .contribution-page .contribution-main > p {
+    font-size: 12px;
+  }
+  .contribution-page .contribution-main li {
+    font-size: 11px;
+  }
+  .contribution-page .contribution-side {
+    margin: 0 10px 10px;
+    padding: 24px;
+  }
+  .contribution-page .contribution-side h4 {
+    font-size: 18px;
+  }
+  .contribution-page .contribution-side p {
+    font-size: 11px;
+  }
+  .contribution-page .contribution-side .button {
+    font-size: 11px;
+  }
+  .contribution-page .historical summary {
+    font-size: 10px;
+    line-height: 1.6;
+    padding: 19px 0;
+  }
+  .contribution-page .historical summary > span {
+    gap: 9px;
+  }
+  .contribution-page .historical summary svg {
+    flex-shrink: 0;
+  }
+  .contribution-page .historical-body {
+    padding: 5px 3px 22px;
+    font-size: 11px;
+  }
+  .contribution-page .portal-strip {
+    padding-block: 30px;
+  }
+  .contribution-page .portal-strip-inner {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+  }
+  .contribution-page .portal-strip-icon {
+    width: 40px;
+    height: 40px;
+    align-self: start;
+  }
+  .contribution-page .portal-strip-icon svg {
+    width: 23px;
+  }
+  .contribution-page .portal-strip .eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .contribution-page .portal-strip h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+  }
+  .contribution-page .portal-strip p {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .contribution-page .portal-strip .button {
+    margin-left: 55px;
+    grid-column: 1/-1;
+    justify-self: start;
+    margin-top: 5px;
+    min-height: 43px;
+  }
+  .contribution-page .faq {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contribution-page .faq-intro p {
+    margin: 18px 0;
+    font-size: 12px;
+  }
+  .contribution-page .faq-item h3 > button {
+    font-size: 12px;
+    padding-block: 20px;
+  }
+  .contribution-page .faq-item p {
+    font-size: 12px;
+  }
+  .contribution-page .faq-item [role="region"] {
+    padding-right: 12px;
+  }
+  .contribution-page .contact-grid {
+    grid-template-columns: 1fr;
+    padding-block: 52px;
+    gap: 33px;
+  }
+  .contribution-page .contact-copy h2 {
+    font-size: 37px;
+    line-height: 1.2;
+    margin-top: 23px;
+  }
+  .contribution-page .contact-copy > .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .contribution-page .contact-copy > p {
+    font-size: 12px;
+    max-width: 330px;
+    margin-top: 20px;
+  }
+  .contribution-page .contact-promise {
+    margin-top: 22px;
+  }
+  .contribution-page .contact-form-card {
+    padding: 26px 23px;
+  }
+  .contribution-page .contact-form-card h3 {
+    font-size: 21px;
+  }
+  .contribution-page .contact-form-card > p {
+    font-size: 11px;
+  }
+  .contribution-page .contact-form-card input {
+    font-size: 12px;
+    padding: 12px;
+    min-height: 45px;
+  }
+  .contribution-page .contact-form-card label {
+    font-size: 11px;
+  }
+  .contribution-page .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contribution-page .contact-form-card form {
+    gap: 15px;
+  }
+  .contribution-page .contact-form-card .button {
+    font-size: 11px;
+  }
+  .contribution-page .form-disclaimer {
+    font-size: 8px;
+  }
+  .contribution-page .footer-main {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-block: 42px 32px;
+    gap: 30px 20px;
+  }
+  .contribution-page .footer-brand img {
+    width: 160px;
+  }
+  .contribution-page .footer-brand p {
+    font-size: 9px;
+  }
+  .contribution-page .footer-nav a {
+    font-size: 10px;
+  }
+  .contribution-page .footer-nav h4,
+  .contribution-page .footer-contact h4 {
+    font-size: 11px;
+  }
+  .contribution-page .footer-contact {
+    grid-column: 1/-1;
+  }
+  .contribution-page .footer-seal {
+    grid-row: 3;
+    grid-column: 1/-1;
+    flex-direction: row;
+    gap: 15px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 22px 0 0;
+    max-width: none;
+    min-height: 0;
+    justify-content: flex-start;
+  }
+  .contribution-page .footer-seal strong {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+  .contribution-page .footer-seal > span {
+    font-size: 7px;
+  }
+  .contribution-page .footer-seal small {
+    font-size: 10px;
+  }
+  .contribution-page .footer-bottom {
+    font-size: 7px;
+    padding-block: 19px;
+    gap: 12px;
+  }
+  .contribution-page .footer-contact a {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contribution-page *,
+  .contribution-page *:before,
+  .contribution-page *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .contribution-page .hero-photo {
+    will-change: auto;
+  }
+}
+
+/* Accessible shades for small text and reversed type. */
+.contribution-page .button-red,
+.contribution-page .anniversary,
+.contribution-page .marquee,
+.contribution-page .contact-section {
+  background: var(--red-dark);
+}
+.contribution-page .contribution-tabs button.active,
+.contribution-page .contribution-main > .eyebrow,
+.contribution-page .art-label,
+.contribution-page .giant-75 > span,
+.contribution-page .footer-seal,
+.contribution-page .faq-item .text-link {
+  color: var(--red-dark);
+}
+.contribution-page .contact-copy > .eyebrow {
+  opacity: 1;
+}
+.contribution-page .contact-copy > p,
+.contribution-page .contact-promise > span {
+  color: #fff;
+}
+.contribution-page .contact-copy h2 > span {
+  color: #ffd9dc;
+}
+.contribution-page .stat-unit {
+  color: var(--red-dark);
+}
+
+.contribution-page [id] {
+  scroll-margin-top: 100px;
+}

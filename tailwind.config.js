@@ -16,6 +16,15 @@ const config = {
         sm: "calc(var(--radius) - 4px)"
       },
       colors: {
+        brand: {
+          red: { DEFAULT: "#ff1b24", dark: "#cf0f17", light: "#ff5a61" },
+          ink: "#1c1f24",
+          slate: "#313131",
+          gray: "#69727d",
+          mist: "#f4f5f7",
+          green: "#39b54a",
+          blue: "#066aab"
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

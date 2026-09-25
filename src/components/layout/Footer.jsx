@@ -48,6 +48,7 @@ export default function Footer() {
                 { label: "Sobre", path: "/sobre" },
                 { label: "Benefícios", path: "/beneficios" },
                 { label: "Associe-se", path: "/associe-se" },
+                { label: "Contribua", path: "/contribuicao" },
               ].map((link) => (
                 <Link
                   key={link.path}

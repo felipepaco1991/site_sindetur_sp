@@ -15,6 +15,7 @@ import GuiaNR01 from './pages/GuiaNR01';
 import ReformaTributaria from './pages/ReformaTributaria';
 import TurismoEmNumeros from './pages/TurismoEmNumeros';
 import AssocieSe from './pages/AssocieSe';
+import Contribuicao from './pages/Contribuicao';
 import Contato from './pages/Contato';
 import Radix from './pages/Radix';
 import FesturisGramado from './pages/FesturisGramado';
@@ -58,6 +59,7 @@ const AuthenticatedApp = () => {
         <Route path="/reforma-tributaria" element={<ReformaTributaria />} />
         <Route path="/turismo-em-numeros" element={<TurismoEmNumeros />} />
         <Route path="/associe-se" element={<AssocieSe />} />
+        <Route path="/contribuicao" element={<Contribuicao />} />
         <Route path="/contato" element={<Contato />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />

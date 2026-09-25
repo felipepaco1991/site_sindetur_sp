@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+.association-page {
+  overflow-anchor: none;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  color: #1c1f24;
+  background: white;
+}
+
+.association-page [id] {
+  scroll-margin-top: 100px;
+}
+
+.association-page .font-display {
+  font-family: inherit;
+}
+
+.association-page .bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.association-page .animate-float-slow {
+  animation: association-float 9s ease-in-out infinite;
+}
+
+.association-page .animate-spin-slow {
+  animation: association-spin 18s linear infinite;
+}
+
+.association-page .animate-pulse-ring {
+  animation: association-pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes association-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+}
+
+@keyframes association-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes association-pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .association-page *,
+  .association-page *::before,
+  .association-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
