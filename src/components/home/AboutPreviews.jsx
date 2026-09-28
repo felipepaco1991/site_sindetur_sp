@@ -17,8 +17,8 @@ export default function AboutPreview() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="/images/quem-somos.png"
-                alt="Reunião institucional Sindetur-SP"
+                src="/images/quem-somos-2026.png"
+                alt="Imagem ilustrativa de profissionais do turismo em reunião em São Paulo"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
