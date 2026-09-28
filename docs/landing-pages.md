@@ -1,7 +1,7 @@
 # Landing pages integradas
 
 - `/associe-se`: conteúdo do projeto `LP_Associação`, com o formulário de associação já existente no site.
-- `/contribuicao`: conteúdo do projeto `LP_Constribuicao`, incluindo abas, FAQ, tabelas históricas de 2024 e preparação de e-mail.
+- `/contribuicao`: página padronizada com o site, abas, FAQ e valores de 2026 publicados nas circulares 009/2025, 007/2025 e 003/2026. A seção de valores mantém links para os PDFs oficiais e informa a divergência de faixas encontrada na Circular 009/2025.
 
 As páginas usam o cabeçalho e o rodapé compartilhados do site. Os botões de associação e contribuição, tanto no desktop quanto no celular, apontam para essas rotas internas.
 
@@ -9,7 +9,7 @@ As páginas usam o cabeçalho e o rodapé compartilhados do site. Os botões de 
 
 Os componentes da associação ficam em `src/components/associacao/`. A contribuição está em `src/pages/Contribuicao.jsx`. Os estilos em `src/styles/` estão limitados às respectivas páginas. As imagens novas ficam em `public/images/associacao/` e `public/images/contribuicao/`; as fotos da diretoria reutilizam `public/images/diretoria/`.
 
-Foram mantidos os conteúdos e valores dos projetos locais. Alterações de valores comerciais devem ser feitas nos componentes correspondentes; a contribuição mantém as tabelas de 2024 identificadas como históricas.
+Os valores de 2026 ficam centralizados em `src/data/contribuicoes.js`. Alterações comerciais devem ser feitas nesse arquivo, mantendo os links para as circulares oficiais.
 
 ## Formulários
 

@@ -59,14 +59,14 @@ const services = [
 ];
 export default function Servicos() {
   return (
-    <section id="servicos" className="relative bg-brand-mist py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="servicos" className="relative bg-secondary py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold uppercase tracking-widest text-brand-red"
+            className="text-sm font-bold uppercase tracking-widest text-primary"
           >
             Vantagens
           </motion.span>
@@ -75,7 +75,7 @@ export default function Servicos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-3 text-balance text-3xl font-extrabold text-brand-ink sm:text-4xl"
+            className="mt-3 text-balance text-3xl font-bold text-foreground sm:text-4xl"
           >
             Tudo que sua empresa ganha ao se associar
           </motion.h2>
@@ -84,7 +84,7 @@ export default function Servicos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-lg text-brand-gray"
+            className="mt-4 text-lg text-muted-foreground"
           >
             Benefícios pensados para fortalecer, proteger e impulsionar empresas
             de turismo em todo o estado de São Paulo.
@@ -100,15 +100,15 @@ export default function Servicos() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl hover:shadow-brand-red/10"
+              className="group relative overflow-hidden rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand-red/5 transition-transform duration-500 group-hover:scale-150" />
+              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-lg bg-primary/5 transition-transform duration-500 group-hover:scale-150" />
               <div className="relative">
-                <div className="inline-flex rounded-xl bg-brand-red/10 p-3 text-brand-red transition-colors group-hover:bg-brand-red group-hover:text-white">
+                <div className="inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                   <s.icon size={22} />
                 </div>
-                <h3 className="mt-4 font-bold text-brand-ink">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-brand-gray">
+                <h3 className="mt-4 font-bold text-foreground">{s.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                   {s.text}
                 </p>
               </div>

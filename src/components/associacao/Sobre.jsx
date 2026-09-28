@@ -93,9 +93,9 @@ export default function Sobre() {
   return (
     <section
       id="sobre"
-      className="relative overflow-hidden bg-white py-24 sm:py-32"
+      className="relative overflow-hidden bg-white py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div>
             <motion.span
@@ -103,7 +103,7 @@ export default function Sobre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-sm font-bold uppercase tracking-widest text-brand-red"
+              className="text-sm font-bold uppercase tracking-widest text-primary"
             >
               Quem somos
             </motion.span>
@@ -113,7 +113,7 @@ export default function Sobre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-3 text-balance text-3xl font-extrabold text-brand-ink sm:text-4xl"
+              className="mt-3 text-balance text-3xl font-bold text-foreground sm:text-4xl"
             >
               75 anos contribuindo para o crescimento do turismo em São Paulo
             </motion.h2>
@@ -123,7 +123,7 @@ export default function Sobre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-lg leading-relaxed text-brand-gray"
+              className="mt-6 text-lg leading-relaxed text-muted-foreground"
             >
               O Sindicato das Empresas de Turismo do Estado de São Paulo
               (Sindetur-SP) é a entidade que representa e defende os interesses
@@ -141,11 +141,11 @@ export default function Sobre() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.15 * i }}
-                  className="group rounded-2xl border border-black/5 p-5 transition-colors hover:border-brand-red/30 hover:bg-brand-mist"
+                  className="group rounded-2xl border border-black/5 p-5 transition-colors hover:border-primary/30 hover:bg-secondary"
                 >
-                  <p.icon size={22} className="text-brand-red" />
-                  <h3 className="mt-3 font-bold text-brand-ink">{p.title}</h3>
-                  <p className="mt-1 text-sm text-brand-gray">{p.text}</p>
+                  <p.icon size={22} className="text-primary" />
+                  <h3 className="mt-3 font-bold text-foreground">{p.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -154,13 +154,13 @@ export default function Sobre() {
 
         <div className="mt-20 border-t border-black/5 pt-16">
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <span className="text-sm font-bold uppercase tracking-widest text-brand-red">
+            <span className="text-sm font-bold uppercase tracking-widest text-primary">
               Diretoria
             </span>
-            <h3 className="mt-3 text-3xl font-extrabold text-brand-ink sm:text-4xl">
+            <h3 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
               Quem nos representa
             </h3>
-            <p className="mt-4 text-brand-gray">
+            <p className="mt-4 text-muted-foreground">
               Empresários do setor de turismo que lideram o Sindetur-SP com
               comprometimento e visão estratégica.
             </p>
@@ -182,13 +182,13 @@ export default function Sobre() {
                     alt={director.name}
                     loading="lazy"
                     style={{ objectPosition: director.position }}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:bg-primary/90"
                   />
                 </div>
-                <p className="text-sm font-bold leading-snug text-brand-ink">
+                <p className="text-sm font-bold leading-snug text-foreground">
                   {director.name}
                 </p>
-                <p className="mt-1 text-xs font-semibold text-brand-red">
+                <p className="mt-1 text-xs font-semibold text-primary">
                   {director.company}
                 </p>
               </motion.div>

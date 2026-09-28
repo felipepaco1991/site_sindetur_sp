@@ -17,7 +17,7 @@ export default function AboutPreview() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="https://sindetursp.org.br/wp-content/uploads/2026/05/716f4fde9_generated_be87a3fb.png"
+                src="/images/quem-somos.png"
                 alt="Reunião institucional Sindetur-SP"
                 className="w-full h-full object-cover"
               />

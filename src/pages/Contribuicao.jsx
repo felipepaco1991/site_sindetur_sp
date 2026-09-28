@@ -27,15 +27,17 @@ import {
   FileText,
 } from "lucide-react";
 import "@/styles/contribuicao.css";
+import ContribuicaoValores from "@/components/ContribuicaoValores";
+import { contribuicoes2026 } from "@/data/contribuicoes";
 const PORTAL = "https://sindetursp.gersin.com.br/public/login";
 const contributions = [
   {
     icon: Landmark,
-    title: "Sindical patronal",
+    title: contribuicoes2026.sindical.nome,
     label: "Representação que faz a diferença",
     text: "Apoia as atividades sindicais e a defesa dos interesses das empresas de turismo do estado de São Paulo.",
     detail:
-      "O cálculo considera o capital social da empresa e a tabela de contribuição sindical divulgada pela CNC. Consulte o enquadramento e as condições aplicáveis à sua empresa no portal.",
+      "O cálculo considera o capital social da empresa e a tabela da Circular 009/2025, com vencimento em 31/01/2026. Consulte abaixo os valores da Contribuição Sindical Patronal 2026 e acesse o portal para verificar a situação da empresa.",
     bullets: [
       "Custeio das atividades sindicais",
       "Representação dos interesses da categoria",
@@ -44,11 +46,11 @@ const contributions = [
   },
   {
     icon: UsersRound,
-    title: "Associativa",
+    title: contribuicoes2026.associativa.nome,
     label: "Mais perto de quem representa você",
     text: "Fortalece a relação entre sua empresa e o sindicato, contribuindo para a profissionalização e o desenvolvimento do setor.",
     detail:
-      "Destinada às empresas associadas e associadas usuárias, conforme o Estatuto Social do Sindetur-SP. Consulte no portal as condições e os valores do exercício atual.",
+      `${contribuicoes2026.associativa.aVista} à vista no boleto, ou ${contribuicoes2026.associativa.total} em até ${contribuicoes2026.associativa.parcelas} no cartão de crédito. Vencimento informado na Circular 003/2026: ${contribuicoes2026.associativa.vencimento}.`,
     bullets: [
       "Participação na vida associativa",
       "Fortalecimento do setor de turismo",
@@ -57,11 +59,11 @@ const contributions = [
   },
   {
     icon: Handshake,
-    title: "Patronal",
+    title: contribuicoes2026.patronal.nome,
     label: "Diálogo que se transforma em segurança",
     text: "Sustenta as negociações coletivas que levam mais estabilidade e segurança às relações de trabalho no turismo.",
     detail:
-      "A contribuição destinada ao custeio das negociações coletivas considera as faixas de faturamento da empresa. O portal reúne as informações para consultar pendências e emitir boletos.",
+      "A Contribuição Patronal 2026 considera o faturamento de 2025, com vencimento em 15/01/2026. Pagamento à vista com 10% de desconto no boleto ou Pix, ou em até 5 parcelas no cartão, sem desconto, conforme a Circular 007/2025.",
     bullets: [
       "Custeio das negociações coletivas",
       "Condições conforme o faturamento",
@@ -76,7 +78,7 @@ const questions = [
   ],
   [
     "Qual é a diferença entre as contribuições?",
-    "A contribuição sindical patronal apoia as atividades sindicais; a associativa se relaciona à participação das empresas associadas; e a patronal é destinada ao custeio das negociações coletivas. Consulte o Sindetur-SP para confirmar o enquadramento da sua empresa e as condições do exercício atual.",
+    "A Contribuição Sindical Patronal apoia as atividades sindicais; a Contribuição Associativa se relaciona à participação das empresas associadas; e a Contribuição Patronal é destinada ao custeio das negociações coletivas. Consulte o Sindetur-SP para confirmar o enquadramento da sua empresa e as condições do exercício atual.",
   ],
   [
     "Como consultar pendências e emitir boletos?",
@@ -84,15 +86,15 @@ const questions = [
   ],
   [
     "É meu primeiro acesso. Como me cadastrar?",
-    "No Portal de Serviços, selecione “Cadastre-se”, preencha o CNPJ, nome, e-mail e senha. Depois, confirme o cadastro pelo link enviado ao seu e-mail. Com o acesso liberado, consulte as contribuições da empresa e as formas de pagamento disponíveis.",
+    "No Portal de Serviços, selecione “Cadastre-se”, preencha o CNPJ, nome, e-mail e senha. A confirmação será enviada ao e-mail principal da empresa já cadastrado no Sindetur-SP; o responsável por esse e-mail deve liberar o acesso. Com o acesso liberado, consulte as contribuições da empresa e as formas de pagamento disponíveis.",
   ],
   [
     "Onde encontro os valores atualizados?",
-    "Os valores e vencimentos atuais devem ser consultados no Portal de Serviços ou diretamente com o Setor de Arrecadações: contribuicao@sindetursp.org.br. As tabelas de 2024 disponíveis nesta página são referências históricas da LP original.",
+    "Os valores e vencimentos de 2026 estão na seção “Valores e condições — 2026”, junto aos PDFs das circulares. Para consultar pendências e condições após o vencimento, acesse o Portal de Serviços ou fale com o Setor de Arrecadações: saa@sindetursp.org.br.",
   ],
   [
     "Como posso falar com o sindicato?",
-    "Entre em contato pelo telefone (11) 3350-8080. Para contribuições, envie um e-mail para contribuicao@sindetursp.org.br. Para assuntos associativos, utilize saa@sindetursp.org.br.",
+    "Entre em contato pelo telefone (11) 3350-8080. Para contribuições, envie um e-mail para saa@sindetursp.org.br. Para assuntos associativos, utilize saa@sindetursp.org.br.",
   ],
 ];
 function Reveal({ children, className = "", delay = 0 }) {
@@ -176,7 +178,7 @@ export default function Contribuicao() {
     const data = new FormData(e.currentTarget);
     const body = `Olá, equipe Sindetur-SP!\n\nQuero saber mais sobre as contribuições e como fortalecer o setor de turismo.\n\nNome: ${data.get("name")}\nE-mail: ${data.get("email")}\nTelefone: ${data.get("phone")}\nAgência: ${data.get("agency")}\n\nAguardo as orientações. Obrigado(a)!`;
     setEmailDraft(
-      `mailto:contribuicao@sindetursp.org.br?subject=${encodeURIComponent("Interesse em contribuir — " + data.get("agency"))}&body=${encodeURIComponent(body)}`,
+      `mailto:saa@sindetursp.org.br?subject=${encodeURIComponent("Interesse em contribuir — " + data.get("agency"))}&body=${encodeURIComponent(body)}`,
     );
   }
   return (
@@ -538,7 +540,7 @@ export default function Contribuicao() {
             >
               <div className="contribution-main">
                 <span className="eyebrow">
-                  CONTRIBUIÇÃO {active.title.toUpperCase()}
+                  {active.title}
                 </span>
                 <h3>{active.label}</h3>
                 <p>{active.text}</p>
@@ -566,150 +568,7 @@ export default function Contribuicao() {
               </div>
             </motion.div>
           </AnimatePresence>
-          <details className="historical">
-            <summary>
-              <span>
-                <FileText size={16} /> Consultar valores e condições de
-                referência — 2024
-              </span>
-              <Plus size={19} />
-            </summary>
-            <div className="historical-body">
-              <p>
-                <strong>
-                  Referência histórica da página original, exercício de 2024.
-                </strong>{" "}
-                Estes valores e prazos não representam uma cobrança vigente.
-                Consulte o portal ou o Setor de Arrecadações para o exercício
-                atual.
-              </p>
-              <h4>Contribuição sindical patronal — tabela CNC 2024</h4>
-              <p>
-                O capital social é multiplicado pelo índice e somado à parcela
-                adicional.
-              </p>
-              <div
-                className="table-scroll"
-                tabIndex={0}
-                role="region"
-                aria-label="Tabela histórica de contribuição sindical 2024"
-              >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Capital social</th>
-                      <th>Alíquota</th>
-                      <th>Índice</th>
-                      <th>Adicional</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["R$ 0,01 a R$ 38.838,00", "Mínima", "0", "R$ 310,70"],
-                      ["R$ 38.838,01 a R$ 77.676,00", "0,80%", "0,008", "—"],
-                      [
-                        "R$ 77.676,01 a R$ 776.760,00",
-                        "0,20%",
-                        "0,002",
-                        "R$ 466,06",
-                      ],
-                      [
-                        "R$ 776.760,01 a R$ 77.676.000,00",
-                        "0,10%",
-                        "0,001",
-                        "R$ 1.242,82",
-                      ],
-                      [
-                        "R$ 77.676.000,01 a R$ 414.272.000,00",
-                        "0,02%",
-                        "0,0002",
-                        "R$ 63.383,62",
-                      ],
-                      [
-                        "A partir de R$ 414.272.000,01",
-                        "Máxima",
-                        "0",
-                        "R$ 146.238,02",
-                      ],
-                    ].map((row) => (
-                      <tr key={row[0]}>
-                        {row.map((c) => (
-                          <td key={c}>{c}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p>
-                A LP original informa pagamento na Caixa Econômica Federal, rede
-                bancária, casas lotéricas ou internet.
-              </p>
-              <h4>Contribuição associativa — 2024</h4>
-              <p>
-                R$ 1.200,00 em 12 parcelas mensais, com vencimento inicial em
-                15/01/2024. O pagamento à vista até essa data previa desconto de
-                R$ 210,00, totalizando R$ 990,00, via boleto ou Pix. Encargos
-                informados: multa de 10%, juros de 1% ao mês e correção pelo
-                INPC ou índice substituto.
-              </p>
-              <h4>Contribuição patronal — 2024</h4>
-              <div
-                className="table-scroll"
-                tabIndex={0}
-                role="region"
-                aria-label="Tabela histórica de contribuição patronal 2024"
-              >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Faixa de faturamento anual</th>
-                      <th>Valor</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["Até R$ 81.000,00 (MEI)", "R$ 360,00"],
-                      ["R$ 81.000,01 a R$ 360.000,00 (ME)", "R$ 720,00"],
-                      ["R$ 360.000,01 a R$ 4.800.000,00 (EPP)", "R$ 2.160,00"],
-                      [
-                        "Acima de R$ 4.800.000,01 (demais empresas)",
-                        "R$ 4.320,00",
-                      ],
-                    ].map((row) => (
-                      <tr key={row[0]}>
-                        {row.map((c) => (
-                          <td key={c}>{c}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p>
-                Condições informadas para 15/01/2024: 10% de desconto no boleto
-                ou Pix, ou 5 parcelas mensais no cartão, sem desconto.
-              </p>
-              <h4>Fundamentação e condições informadas na LP original</h4>
-              <p>
-                A página original apresenta as contribuições sindical patronal e
-                patronal como obrigatórias, conforme deliberação da AGE de
-                30/10/2023. Cita o artigo 8º, III, da Constituição Federal para
-                a representação da categoria; a Resolução CNC/SISCOMÉRCIO nº
-                044/2022 para o cálculo sindical; e o artigo 513, “e”, da CLT e
-                os Termos Aditivos às CCTs para a contribuição patronal.
-              </p>
-              <p>
-                Segundo o parágrafo único do artigo 6º do Estatuto Social
-                transcrito na fonte, a exceção ao pagamento exige
-                cumulativamente: não ser associada; apresentar oposição por
-                carta entregue na sede em até 15 dias da data-base anual; e não
-                aplicar, por conta e risco da empresa, os termos dos Acordos
-                Coletivos. Confirme as regras aplicáveis diretamente com o
-                sindicato.
-              </p>
-            </div>
-          </details>
+          <ContribuicaoValores />
         </section>
         <section className="portal-strip">
           <div className="container">
@@ -747,7 +606,7 @@ export default function Contribuicao() {
               para ajudar a sua empresa.
             </p>
             <a
-              href="mailto:contribuicao@sindetursp.org.br"
+              href="mailto:saa@sindetursp.org.br"
               className="text-link"
             >
               Fale com a nossa equipe <ArrowUpRight size={17} />

@@ -24,14 +24,14 @@ const socials = [
 ];
 export default function Contato() {
   return (
-    <section id="contato" className="relative bg-brand-mist py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="contato" className="relative bg-secondary py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold uppercase tracking-widest text-brand-red"
+            className="text-sm font-bold uppercase tracking-widest text-primary"
           >
             Contato
           </motion.span>
@@ -40,7 +40,7 @@ export default function Contato() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-3 text-balance text-3xl font-extrabold text-brand-ink sm:text-4xl"
+            className="mt-3 text-balance text-3xl font-bold text-foreground sm:text-4xl"
           >
             Vamos conversar
           </motion.h2>
@@ -54,11 +54,11 @@ export default function Contato() {
           className="mx-auto mt-14 grid max-w-3xl gap-6 sm:grid-cols-2"
         >
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/5">
-            <div className="inline-flex rounded-xl bg-brand-red/10 p-3 text-brand-red">
+            <div className="inline-flex rounded-xl bg-primary/10 p-3 text-primary">
               <MapPin size={22} />
             </div>
-            <h3 className="mt-4 font-bold text-brand-ink">Endereço</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-brand-gray">
+            <h3 className="mt-4 font-bold text-foreground">Endereço</h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
               Av. Dr. Vieira de Carvalho, 115 — 11º andar
               <br />
               Centro, São Paulo/SP — CEP 01210-010
@@ -66,7 +66,7 @@ export default function Contato() {
           </div>
 
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/5">
-            <h3 className="font-bold text-brand-ink">Redes sociais</h3>
+            <h3 className="font-bold text-foreground">Redes sociais</h3>
             <div className="mt-4 flex flex-col gap-3">
               {socials.map((s) => (
                 <a
@@ -74,9 +74,9 @@ export default function Contato() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 text-sm font-medium text-brand-gray transition-colors hover:text-brand-red"
+                  className="group flex items-center gap-3 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <span className="inline-flex rounded-lg bg-brand-mist p-2 text-brand-slate transition-colors group-hover:bg-brand-red group-hover:text-white">
+                  <span className="inline-flex rounded-lg bg-secondary p-2 text-foreground transition-colors group-hover:bg-primary group-hover:text-white">
                     <s.icon size={16} />
                   </span>
                   {s.label}

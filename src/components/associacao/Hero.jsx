@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-brand-ink pt-20 pb-24 sm:pt-24 sm:pb-32"
+      className="relative min-h-[72vh] overflow-hidden bg-[#061d43] pt-20 pb-24 sm:pt-24 sm:pb-32 lg:min-h-[78vh] lg:pt-28 lg:pb-32"
     >
       {/* animated background */}
       <div className="pointer-events-none absolute inset-0">
@@ -22,11 +22,11 @@ export default function Hero() {
           alt=""
           className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60"
         />
-        <div className="absolute inset-0 bg-brand-ink/55 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-ink via-brand-ink/50 to-brand-ink" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/10 to-brand-ink/70" />
-        <div className="absolute -top-32 -right-32 h-[32rem] w-[32rem] rounded-full bg-brand-red/30 blur-[120px]" />
-        <div className="absolute -bottom-40 -left-24 h-[28rem] w-[28rem] rounded-full bg-brand-green/20 blur-[130px]" />
+        <div className="absolute inset-0 bg-[#061d43]/55 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#061d43]/80 via-[#061d43]/45 to-[#061d43]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061d43]/95 via-[#061d43]/55 to-[#061d43]/35" />
+        <div className="absolute -top-32 -right-32 h-[32rem] w-[32rem] rounded-full bg-primary/25 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-24 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-[130px]" />
         <div className="bg-noise absolute inset-0" />
 
         <motion.div
@@ -43,18 +43,18 @@ export default function Hero() {
             <polygon
               points="60,4 110,34 110,86 60,116 10,86 10,34"
               fill="none"
-              stroke="#ff1b24"
+              stroke="currentColor"
               strokeWidth="2"
             />
           </svg>
         </motion.div>
 
         <motion.div className="absolute bottom-24 left-[6%] hidden sm:block animate-float-slow">
-          <Plane size={40} className="rotate-45 text-brand-red/40" />
+          <Plane size={40} className="rotate-45 text-primary/40" />
         </motion.div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
             <motion.div
@@ -62,7 +62,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/40 bg-brand-red/10 px-4 py-1.5 text-sm font-semibold text-brand-red"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/90 backdrop-blur-sm"
             >
               <Sparkles size={16} />
               75 anos ao lado do turismo paulista
@@ -73,10 +73,10 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="text-balance text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl"
+              className="font-display text-balance text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
             >
               Representamos e defendemos quem move o{" "}
-              <span className="relative inline-block text-brand-red">
+              <span className="relative inline-block text-primary">
                 turismo
                 <svg
                   className="absolute -bottom-2 left-0 w-full"
@@ -86,7 +86,7 @@ export default function Hero() {
                 >
                   <path
                     d="M2 9C40 2 160 2 198 9"
-                    stroke="#ff1b24"
+                    stroke="currentColor"
                     strokeWidth="4"
                     strokeLinecap="round"
                   />
@@ -100,7 +100,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-6 max-w-xl text-lg text-white/70"
+              className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg"
             >
               Há 75 anos o Sindetur-SP representa, defende os interesses da
               categoria e contribui para a profissionalização do setor de
@@ -117,7 +117,7 @@ export default function Hero() {
             >
               <a
                 href="#solicitar-associacao"
-                className="group inline-flex items-center gap-2 rounded-full bg-brand-red px-7 py-3.5 font-bold text-white shadow-xl shadow-brand-red/30 transition-all hover:scale-105 hover:shadow-brand-red/50"
+                className="group inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-7 font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-primary/90"
               >
                 Eu quero fazer parte dessa evolução
                 <ArrowRight
@@ -127,7 +127,7 @@ export default function Hero() {
               </a>
               <a
                 href="#sobre"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex h-12 items-center gap-2 rounded-lg border border-white/30 px-6 font-medium text-white transition-colors hover:bg-white hover:text-[#061d43]"
               >
                 Conheça o sindicato
               </a>
@@ -140,7 +140,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-10 flex items-center gap-3 text-sm text-white/50"
             >
-              <ShieldCheck size={18} className="text-brand-green" />
+              <ShieldCheck size={18} className="text-primary" />
               Entidade oficial de representação sindical do turismo paulista
             </motion.div>
           </div>
@@ -154,13 +154,13 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full border border-white/10 animate-spin-slow" />
             <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
 
-            <div className="absolute inset-0 flex items-center justify-center rounded-full bg-gradient-to-br from-brand-red/20 via-transparent to-brand-green/10">
-              <span className="pointer-events-none absolute h-40 w-40 rounded-full bg-brand-red/30 animate-pulse-ring" />
+            <div className="absolute inset-0 flex items-center justify-center rounded-full bg-gradient-to-br from-primary/20 via-transparent to-primary/5">
+              <span className="pointer-events-none absolute h-40 w-40 rounded-lg bg-primary/30 animate-pulse-ring" />
               <div className="relative z-10 flex flex-col items-center justify-center rounded-full bg-white/5 p-10 text-center backdrop-blur-sm">
-                <span className="text-7xl font-extrabold text-white sm:text-8xl">
+                <span className="text-7xl font-bold text-white sm:text-8xl">
                   75
                 </span>
-                <span className="mt-1 text-sm font-bold uppercase tracking-[0.3em] text-brand-red">
+                <span className="mt-1 text-sm font-bold uppercase tracking-[0.3em] text-primary">
                   Anos
                 </span>
               </div>
